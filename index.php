@@ -34,6 +34,7 @@
 				<input type="submit" value="zoeken"/><br/>
 				<p class="results"></p>
 			</form>
+			test
 		</center>
 	</body>
 </html>
