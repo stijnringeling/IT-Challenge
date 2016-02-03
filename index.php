@@ -3,25 +3,29 @@
 		<!--jquery ajax script-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script type="text/javascript">
+			lastInput = "";
 			function getHints(text){
-				$.ajax({
-					url: "getHints.php",
-					data: {"search": text},
-					dataType: "json",
-					success: function(data, status, j){
-						var resultString = "";
-						if(data.length != 0){
-							$.each(data, function(key, value){
-								if(resultString == ""){
-									resultString = value;
-								}else{
-									resultString += "<br/>" + value;
-								}
-							});
+				if(lastInput != text && text != ""){
+					$.ajax({
+						url: "getHints.php",
+						data: {"search": text},
+						dataType: "json",
+						success: function(data, status, j){
+							var resultString = "";
+							if(data.length != 0){
+								$.each(data, function(key, value){
+									if(resultString == ""){
+										resultString = value;
+									}else{
+										resultString += "<br/>" + value;
+									}
+								});
+							}
+							$(".results").html(resultString);
+							lastInput = text;
 						}
-						$(".results").html(resultString);
-					}
-				});
+					});
+				}
 			}
 		</script>
 		<title>ITchallenge</title>
