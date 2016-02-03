@@ -1,10 +1,8 @@
 #center
 {
-max-height:350;
-height:562;
-width:1300;
-background-color: #FFFFFF;
+background-color: #000000;
 background-size:100%;
 border: 1px solid;
-margin-top:100;
+margin:100;
+padding:200;
 }

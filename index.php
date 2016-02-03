@@ -32,12 +32,12 @@
 		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
 	<body>
-		<center>
+		<div class="content">
 			<form method="GET" action="search.php">
-				<input type="text" name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/>
-				<input type="submit" value="zoeken"/><br/>
+				<div id="input"><input type="text" name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/></div>
+				<div id="button"><input type="submit" value="zoeken"/><br/></div>
 				<p class="results"></p>
 			</form>
-		</center>
+		</div>
 	</body>
 </html>
