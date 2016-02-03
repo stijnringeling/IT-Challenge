@@ -1,4 +1,5 @@
 <html>
+<head>
 <?php
 	//bestand met connectie info voor verbing met de server.
 	//variabelen initialiseren.
