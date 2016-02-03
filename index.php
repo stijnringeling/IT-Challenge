@@ -38,7 +38,6 @@
 				<div id="button"><input type="submit" value="zoeken"/><br/></div>
 				<p class="results"></p>
 			</form>
-Test
 		</div>
 	</body>
 </html>
