@@ -5,7 +5,7 @@
 		<script type="text/javascript">
 			lastInput = "";
 			function getHints(text){
-				if(lastInput != text && text != ""){
+				if(lastInput != text){
 					$.ajax({
 						url: "getHints.php",
 						data: {"search": text},
