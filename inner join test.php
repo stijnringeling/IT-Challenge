@@ -7,10 +7,14 @@
 	$user = "ITchallenge";
 	$password = "ITchallenge";
 	$database = "ITchallenge";
-	$query = 	"SELECT *
-				FROM NAW 
-				INNER JOIN Rescourse_test 
-				ON NAW.id = Rescourse_test.l_id";
+	$query = 	"SELECT 
+			n.ID
+			n.achternaam
+			rt.hond
+			rt.auto
+			FROM NAW AS n
+			INNER JOIN Rescourse_test as rt
+			ON n.id = rt.id";
 if (!$db =mysql_connect($server, $user, $password)){
 	$boodschap = "<h2>De verbinding met de databaseserver is mislukt!</h2>";
 }
