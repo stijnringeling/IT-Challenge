@@ -25,7 +25,7 @@
 	<p>Deze gegevens zijngevonden: </p>
 	<hr>
 	<?php while($row = mysql_fetch_assoc($resultaat)){
-		echo $row["ID"] ." - ". $row["Achternaam"] ." - ". $row["Hone"] ." - ". $row["Auto"];
+		echo $row["ID"] ." - ". $row["achternaam"] ." - ". $row["hond"] ." - ". $row["auto"];
 	}
 	?>
 </body>
