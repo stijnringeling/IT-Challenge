@@ -5,12 +5,12 @@
 	//variabelen initialiseren.
 	include("db_connect.inc.php");
 	$query = 	"SELECT 
-			n.ID
-			n.achternaam
-			rt.hond
+			n.ID,
+			n.achternaam,
+			rt.hond,
 			rt.auto
 			FROM NAW AS n, 
-			Resource_test AS rt 
+			Rescource_test AS rt 
 			WHERE n.ID = rt.ID";
 	$resultaat = "";
 	if(!$resultaat = mysql_query($query, $db)){
