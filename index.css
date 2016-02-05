@@ -1,8 +1,13 @@
-#center
+.content
 {
-background-color: #000000;
-background-size:100%;
-border: 1px solid;
-margin:100;
-padding:200;
+padding:200 200 200 200;
+background-color: #00acfd;
+}
+#input
+{
+float: left;
+}
+#button
+{
+float: right;
 }
