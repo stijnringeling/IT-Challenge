@@ -13,7 +13,7 @@
 			Resource_test AS rt 
 			WHERE n.ID = rt.ID";
 	$resultaat = "";
-	if(!$resultaat = mysqli_query($query, $db)){
+	if(!$resultaat = mysqli_query($db, $query)){
 		echo "de query \"$query\" kon niet worden uitgevoerd!";
 	}
 	else{
