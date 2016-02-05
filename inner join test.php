@@ -9,11 +9,11 @@
 			n.achternaam
 			rt.hond
 			rt.auto
-			FROM NAW AS n
-			INNER JOIN Rescourse_test as rt
-			ON n.id = rt.id";
+			FROM NAW AS n, 
+			Resource_test AS rt 
+			WHERE n.ID = rt.ID";
 	$resultaat = "";
-	if(!$resultaat = mysql_query($query, $db)){
+	if(!$resultaat = mysqli_query($query, $db)){
 		echo "de query \"$query\" kon niet worden uitgevoerd!";
 	}
 	else{
@@ -24,8 +24,8 @@
 <body>
 	<p>Deze gegevens zijngevonden: </p>
 	<hr>
-	<?php while(list($ID, $achternaam, $hond, $auto)= mysql_fetch_row($resultaat)){
-		echo "$ID - $achternaam - $hond - $auto";
+	<?php while($row = mysqli_fetch_assoc($resultaat)){
+		echo $row["ID"] ." - ". $row["Achternaam"] ." - ". $row["Hone"] ." - ". $row["Auto"];
 	}
 	?>
 </body>
