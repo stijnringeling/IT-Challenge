@@ -3,7 +3,7 @@
 	<?php
 		include("db_connect.inc.php");
 		$search = $_GET["q"];
-		$query = "SELECT * FROM Resources";
+		$query = "SELECT * FROM Resources Where Functies = (SELECT ID FROM Picklist where functie LIKE \"" . $search . "\")";
 		$result = "";
 		if(!$result = mysql_query($query, $db)){
 			echo "Error in query $query";
