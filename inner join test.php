@@ -10,7 +10,7 @@
 			rt.hond,
 			rt.auto
 			FROM NAW AS n, 
-			Rescource_test AS rt 
+			Rescourse_test AS rt 
 			WHERE n.ID = rt.ID";
 	$resultaat = "";
 	if(!$resultaat = mysql_query($query, $db)){
