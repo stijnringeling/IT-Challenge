@@ -13,7 +13,7 @@
 			Resource_test AS rt 
 			WHERE n.ID = rt.ID";
 	$resultaat = "";
-	if(!$resultaat = mysqli_query($db, $query)){
+	if(!$resultaat = mysql_query($query, $db)){
 		echo "de query \"$query\" kon niet worden uitgevoerd!";
 	}
 	else{
@@ -24,7 +24,7 @@
 <body>
 	<p>Deze gegevens zijngevonden: </p>
 	<hr>
-	<?php while($row = mysqli_fetch_assoc($resultaat)){
+	<?php while($row = mysql_fetch_assoc($resultaat)){
 		echo $row["ID"] ." - ". $row["Achternaam"] ." - ". $row["Hone"] ." - ". $row["Auto"];
 	}
 	?>
