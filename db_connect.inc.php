@@ -5,7 +5,7 @@
 	$user = "ITchallenge";
 	$password = "ITchallenge";
 	$database = "ITchallenge";
-	$query = "";
+	//$query = "";
 	if(!$db = mysql_connect($server, $user, $password)){
 		echo "Geen verbinding met de server";
 	}else{
