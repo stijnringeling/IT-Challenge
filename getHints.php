@@ -1,9 +1,18 @@
 <?php
-	include("db_connect.inc.php");
+	include_once("db_connect.inc.php");
+	include_once("searchHelper.php");
 	$request = $_REQUEST["search"];
 	if(isset($_REQUEST["search"])){
+		$return = Array();
 		//Geef een array terug van de namen waar de zoekstring in voorkomt als een javascript object (json, anders kan jquery het niet begrijpen)
-		echo json_encode(getHints($request, $db));
+		if($request != ""){
+			$return[0] = getHints($request, $db);
+			$return[1] = getCount($request, $db);
+		}else{
+			$return[0] = Array();
+			$return[1] = 0;
+		}
+		echo json_encode($return);
 	}
 
 		
@@ -27,6 +36,17 @@
 			}
 		}
 		return $hints;
+	}
+	
+	function getCount($search, $db){
+		$results = search($search, $db);
+		$i = 0;
+		foreach($results as $result){
+			while($content  = mysql_fetch_assoc($result)){
+				$i++;
+			}
+		}
+		return $i;
 	}
 	
 ?>

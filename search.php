@@ -1,22 +1,16 @@
+<?php
+	include_once("db_connect.inc.php");
+	include_once("getHints.php");
+	include_once("searchHelper.php");
+	
+?>
 <html>
 	<head>
 	<?php
-		include("db_connect.inc.php");
-		include("getHints.php");
 		$search = $_GET["q"];
-		$functies = getHints($search, $db);
-		$querys = Array();
-		
-		foreach($functies as $functie){
-			$querys[] = "SELECT * FROM Resources WHERE Functies = (SELECT ID FROM Picklist WHERE functie LIKE \"" . $functie . "\")";
-		}
-		$results = Array();
-		foreach($querys as $query){
-			if(!$result = mysql_query($query, $db)){
-				echo "Error in query $query";
-			}else{
-				$results[] = $result;
-			}
+		$results= Array();
+		if(isset($_GET["q"])){
+			$results = search($search, $db);
 		}
 	?>
 	</head>
