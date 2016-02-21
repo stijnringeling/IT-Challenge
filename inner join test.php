@@ -5,13 +5,13 @@
 	//variabelen initialiseren.
 	include("db_connect.inc.php");
 	$query = 	"SELECT 
-			n.ID
-			n.achternaam
-			rt.hond
+			n.ID,
+			n.achternaam,
+			rt.hond,
 			rt.auto
-			FROM NAW AS n
-			INNER JOIN Rescourse_test as rt
-			ON n.id = rt.id";
+			FROM NAW AS n, 
+			Rescourse_test AS rt 
+			WHERE n.ID = rt.ID";
 	$resultaat = "";
 	if(!$resultaat = mysql_query($query, $db)){
 		echo "de query \"$query\" kon niet worden uitgevoerd!";
@@ -24,8 +24,8 @@
 <body>
 	<p>Deze gegevens zijngevonden: </p>
 	<hr>
-	<?php while(list($ID, $achternaam, $hond, $auto)= mysql_fetch_row($resultaat)){
-		echo "$ID - $achternaam - $hond - $auto";
+	<?php while($row = mysql_fetch_assoc($resultaat)){
+		echo $row["ID"] ." - ". $row["achternaam"] ." - ". $row["hond"] ." - ". $row["auto"];
 	}
 	?>
 </body>
