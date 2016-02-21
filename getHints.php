@@ -20,7 +20,7 @@
 		$hints = Array();
 		$search = strtolower($search);
 		$len = strlen($search);
-		$query = "SELECT * FROM picklist";
+		$query = "SELECT * FROM Picklist";
 		//$query = "SELECT * FROM picklist WHERE funtie LIKE '$search'";
 		$result = "";
 		if(!$result = mysql_query($query, $db)){
