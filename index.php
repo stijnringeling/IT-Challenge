@@ -32,12 +32,24 @@
 		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
 	<body>
+		<div class="header">
+		<div id="homebutton" class="headerbutton">
+		</div>
+		<div id="addprojectbutton" class="headerbutton">
+		</div>
+		<div id="addresourcebutton" class="headerbutton">
+		</div>
+		<div id="inlogbutton" class="headerbutton">
+		</div>
+		</div>
 		<div class="content">
 			<form method="GET" action="search.php">
 				<div id="input"><input type="text" name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/></div>
 				<div id="button"><input type="submit" value="zoeken"/><br/></div>
 				<p class="results"></p>
 			</form>
+		</div>
+		<div class="footer">
 		</div>
 	</body>
 </html>
