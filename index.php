@@ -32,14 +32,19 @@
 		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
 	<body>
+
 		<div class="header">
 		<div id="homebutton" class="headerbutton">
+H
 		</div>
 		<div id="addprojectbutton" class="headerbutton">
+P+
 		</div>
 		<div id="addresourcebutton" class="headerbutton">
+R+
 		</div>
 		<div id="inlogbutton" class="headerbutton">
+Inlog
 		</div>
 		</div>
 		<div class="content">

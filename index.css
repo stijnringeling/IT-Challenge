@@ -1,39 +1,19 @@
 body
 {
+margin: 0;
 background-color: #00acfd;
 }
 .header
 {
-padding:100 50% 100 50%;
+min-width:100%;
+padding:100 0% 100 0%;
 background-color: #c8eaf5;
 }
 .headerbutton
 {
-inline
-}
-#homebutton
-{
-border-style: solid;
-border-width: small;
-padding:100 10% 100 10%;
-}
-#addprojectbutton
-{
-border-style: solid;
-border-width: small;
-padding:100 10% 100 10%;
-}
-#addresourcebutton
-{
-border-style: solid;
-border-width: small;
-padding:100 10% 100 10%;
-}
-#inlogbutton
-{
-border-style: solid;
-border-width: small;
-padding:100 10% 100 10%;
+float: left;
+min-width:25%;
+background-color: #c8eaf5;
 }
 .content
 {
