@@ -36,23 +36,23 @@
 
 		<div class="header">
 		<div id="homebutton" class="headerbutton">
-H
+Home
 		</div>
 		<div id="addprojectbutton" class="headerbutton">
-P+
+Project toevoegen
 		</div>
 		<div id="addresourcebutton" class="headerbutton">
-R+
+Resource toevoegen
 		</div>
 		<div id="inlogbutton" class="headerbutton">
-Inlog
+Inloggen
 		</div>
 		</div>
 		<div class="content">
 			<form method="GET" action="search.php">
-				<p class="count">0</p>
-				<div id="input"><input type="text" name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/></div>
-				<div id="button"><input type="submit" value="zoeken"/><br/></div>
+				<div id="nummer" class="count">0</div>
+				<div id="input" class="center"><input type="text" name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/></div>
+				<div id="button" class="center"><input type="submit" value="zoeken"/></div>
 				<p class="results"></p>
 			</form>
 		</div>

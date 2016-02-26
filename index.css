@@ -6,7 +6,7 @@ background-color: #00acfd;
 .header
 {
 min-width:100%;
-padding:100 0% 100 0%;
+padding:3% 0% 3% 0%;
 background-color: #c8eaf5;
 }
 .headerbutton
@@ -17,22 +17,39 @@ background-color: #c8eaf5;
 }
 .content
 {
-padding:200 50% 200 50%;
+min-width:100%;
 background-color: #00acfd;
+}
+.center
+{
+float: left;
+background-color: #00acfd;
+position: relative;
+left: 35%;
+top: 200px;
+}
+.count
+{
+float: left;
+background-color: #00acfd;
+position: relative;
+left: 35%;
+top: 200px;
 }
 #nummer
 {
-
+margin-left: 5%;
+border-style: solid;
+border-width: 1px;
 }
 #input
 {
-float: left;
 }
 #button
 {
-float: right;
+margin-right: 5%;
 }
 .footer
 {
-background-color: #00acfd;
+background-color: #71cee7;
 }
