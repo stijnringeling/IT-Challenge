@@ -52,7 +52,7 @@ Inloggen
 			<form method="GET" action="search.php">
 				<div id="nummer" class="count">0</div>
 				<div id="input" class="center"><input type="text" name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/></div>
-				<div id="button" class="center"><input type="submit" value="zoeken"/></div>
+				<div id="button" class="center"><input type="submit" value="T"/></div>
 				<p class="results"></p>
 			</form>
 		</div>
