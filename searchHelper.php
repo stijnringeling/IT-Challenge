@@ -6,7 +6,7 @@
 		$querys = Array();
 		
 		foreach($functies as $functie){
-			$querys[] = "SELECT * FROM Resources WHERE Functies = (SELECT ID FROM Picklist WHERE functie LIKE \"" . $functie . "\")";
+			$querys[] = "SELECT * FROM Resources_goed WHERE Functies = (SELECT ID FROM Picklist WHERE functie LIKE \"" . $functie . "\")";
 		}
 		$results = Array();
 		foreach($querys as $query){
