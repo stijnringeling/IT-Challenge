@@ -1,106 +1,64 @@
 <?php
-/*** begin our session ***/
-session_start();
+if(!empty($_POST)){
+	$server = "localhost";
+	$user = "ITchallenge";
+	$password = "ITchallenge";
+	$database = "ITchallenge";
+	$query = "";
 
-/*** first check that both the username, password and form token have been sent ***/
-if(!isset( $_POST['Username'], $_POST['Password'], $_POST['form_token']))
-{
-    $message = 'Please enter a valid username and password';
+$db= mysql_connect($server, $user, $password);
+mysql_select_db($database);
+
+$query = "INSERT users (User_id, Username, Password) ";
+$query .= "VALUES ('";
+$query .= $_POST["User_id"]."','";
+$query .= $_POST["Username"]."','";
+$query .= $_POST["Password"]."','";
+$query .= $_POST["Email"]."')";
+
+
+if(!mysql_query($query)){
+	echo "Er is een fout opgetreden met nummer ". mysql_errno().":" . mysql_error();
+	echo $query;
+	mysql_close($db);
+	exit;
 }
-/*** check the form token is valid ***/
-elseif( $_POST['form_token'] != $_SESSION['form_token'])
-{
-    $message = 'Invalid form submission';
+else{
+	$bedankt .="?id=". mysql_insert_id($db);
+	mysql_close($db);
+header("location:$bedankt");
+	}
 }
-/*** check the username is the correct length ***/
-elseif (strlen( $_POST['Username']) > 20 || strlen($_POST['Username']) < 4)
-{
-    $message = 'Incorrect Length for Username';
-}
-/*** check the password is the correct length ***/
-elseif (strlen( $_POST['Password']) > 20 || strlen($_POST['Password']) < 4)
-{
-    $message = 'Incorrect Length for Password';
-}
-/*** check the username has only alpha numeric characters ***/
-elseif (ctype_alnum($_POST['Username']) != true)
-{
-    /*** if there is no match ***/
-    $message = "Username must be alpha numeric";
-}
-/*** check the password has only alpha numeric characters ***/
-elseif (ctype_alnum($_POST['Password']) != true)
-{
-        /*** if there is no match ***/
-        $message = "Password must be alpha numeric";
-}
-else
-{
-    /*** if we are here the data is valid and we can insert it into database ***/
-    $Username = filter_var($_POST['Username'], FILTER_SANITIZE_STRING);
-    $Password = filter_var($_POST['Password'], FILTER_SANITIZE_STRING);
-
-    /*** now we can encrypt the password ***/
-    $password = sha1( $password );
-    
-    /*** connect to database ***/
-    /*** mysql hostname ***/
-    $mysql_hostname = 'localhost';
-
-    /*** mysql username ***/
-    $mysql_username = 'ITchallenge';
-
-    /*** mysql password ***/
-    $mysql_password = 'ITchallenge';
-
-    /*** database name ***/
-    $mysql_dbname = 'ITchallenge';
-
-    try
-    {
-        $dbh = new PDO("mysql:host=$mysql_hostname;dbname=$mysql_dbname", $mysql_username, $mysql_password);
-        /*** $message = a message saying we have connected ***/
-
-        /*** set the error mode to excptions ***/
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        /*** prepare the insert ***/
-        $stmt = $dbh->prepare("INSERT INTO users (Username, Password ) VALUES (:Username, :Password )");
-
-        /*** bind the parameters ***/
-        $stmt->bindParam(':Username', $Username, PDO::PARAM_STR);
-        $stmt->bindParam(':Password', $Password, PDO::PARAM_STR, 40);
-
-        /*** execute the prepared statement ***/
-        $stmt->execute();
-
-        /*** unset the form token session variable ***/
-        unset( $_SESSION['form_token'] );
-
-        /*** if all is done, say thanks ***/
-        $message = 'New user added';
-    }
-    catch(Exception $e)
-    {
-        /*** check if the username already exists ***/
-        if( $e->getCode() == 23000)
-        {
-            $message = 'Username already exists';
-        }
-        else
-        {
-            /*** if we are here, something has gone wrong with the database ***/
-            $message = 'We are unable to process your request. Please try again later"';
-        }
-    }
-}
-?>
-
+else{
+	?>
+	
 <html>
 <head>
-<title>Login</title>
+<title>Account registration</title>
 </head>
 <body>
-<p><?php echo $message; ?>
+<h2>Add user</h2>
+<form method="post" id="userreg" action="<?php echo $_SERVER["PHP_SELF"] ?>"><table>
+<fieldset>
+<p>
+<label for="Username">Username</label>
+<input type="text" id="username" name="Username" value="" maxlength="20" />
+</p>
+<p>
+<label for="Password">Password</label>
+<input type="text" id="password" name="Password" value="" maxlength="20" />
+</p>
+<p>
+<label for="Email">E-mail</label>
+<input type="text" id="Email" name="Email" value="" maxlength="20" />
+</p>
+<p>
+<input type="submit" value="Login" />
+</p>
+</fieldset>
+</form>
 </body>
 </html>
+<?php
+	}
+?>
