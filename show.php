@@ -1,7 +1,6 @@
 <?php
 	include_once("db_connect.inc.php");
 	include_once("User.php");
-	$user = new User("1234", $db);
 	$functies = Array();
 	$errors = "";
 ?>

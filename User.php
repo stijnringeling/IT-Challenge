@@ -3,13 +3,22 @@
 		function __construct($sessionID, $db){
 			$this->sessionID = $sessionID;
 			$this->db = $db;
-			$this->getData($this->db);
+			$querys = Array();
+			$querys[] = "SELECT ID FROM sessionID WHERE sessionID LIKE '" . $this->sessionID . "'";
+			$this->getData($querys);
+			$querys2 = Array();
+			$querys2[] = "SELECT Username, email FROM users WHERE User_id = '" . $this->ID . "'";
+			$this->getData($querys2);
+			
 		}
 		
-		function getData($db){
-			$query = "SELECT * FROM sessionIDs WHERE sessionID = " . $this->sessionID;
-			$row = $this->query($query, $this->db);
-			$this->ID = $row["ID"];
+		function getData($querys = Array()){
+			foreach($querys as $query){
+				$row = $this->query($query, $this->db);
+				foreach($row as $key => $value){
+					$this->$key = $value;
+				}
+			}
 		}
 		function query($query, $db){
 			$result = mysql_query($query, $db);
