@@ -1,19 +1,14 @@
 <?php
+include_once("db_connect.inc.php");
 if(!empty($_POST)){
-	$server = "localhost";
-	$user = "ITchallenge";
-	$password = "ITchallenge";
-	$database = "ITchallenge";
+	$password = $_POST["Password"];
+	$hash = password_hash($password, PASSWORD_DEFAULT);
 	$query = "";
 
-$db= mysql_connect($server, $user, $password);
-mysql_select_db($database);
-
-$query = "INSERT users (User_id, Username, Password) ";
+$query = "INSERT users (Username, Password, email) ";
 $query .= "VALUES ('";
-$query .= $_POST["User_id"]."','";
 $query .= $_POST["Username"]."','";
-$query .= $_POST["Password"]."','";
+$query .= $hash."','";
 $query .= $_POST["Email"]."')";
 
 
@@ -26,7 +21,7 @@ if(!mysql_query($query)){
 else{
 	$bedankt .="?id=". mysql_insert_id($db);
 	mysql_close($db);
-header("location:$bedankt");
+	header("location:$bedankt");
 	}
 }
 else{
@@ -37,6 +32,9 @@ else{
 <title>Account registration</title>
 </head>
 <body>
+<?php
+	
+?>
 <h2>Add user</h2>
 <form method="post" id="userreg" action="<?php echo $_SERVER["PHP_SELF"] ?>"><table>
 <fieldset>
