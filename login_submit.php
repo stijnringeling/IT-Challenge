@@ -6,7 +6,7 @@ $message = "";
 /*** check if the users is already logged in ***/
 if(isset( $_SESSION['logged_in']) && $_SESSION["logged_in"])
 {
-    $message = 'Users is already logged in';
+    $message = 'User is already logged in';
 }
 /*** check that both the username, password have been submitted ***/
 elseif(!isset( $_POST['Username'], $_POST['Password']))
@@ -59,7 +59,7 @@ else
 					$sessionID .= $characters[rand(0, strlen($characters) - 1)];
 				}
 				//echo $sessionID;
-				$query2 = "INSERT sessionID (ID, sessionID) VALUES('" . $row["User_id"] . "','" . $sessionID . "')";
+				$query2 = "INSERT sessionID (ID, sessionID) VALUES('" . $row["User_id"] . "','" . $sessionID . "') ON DUPLICATE KEY UPDATE sessionID = '" . $sessionID . "'";
 				$result2 = "";
 				if(!$result2 = mysql_query($query2, $db)){
 					echo "Error in query $query2";

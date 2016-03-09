@@ -3,10 +3,6 @@
 	include_once("db_connect.inc.php");
 	include_once("getHints.php");
 	include_once("searchHelper.php");
-	include_once("User.php");
-	if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]){
-		$user = new User($_SESSION["sessionID"], $db);
-	}
 	$functies = Array();
 ?>
 <html>
@@ -31,8 +27,6 @@
 	<?php
 		if(sizeof($results) == 0){
 		}else{
-			echo $user->ID;
-			echo $user->Username;
 			echo "<table border=1px>";
 			echo "<tr><td>ID</td><td>Functie</td><td>Opleiding</td><td>Cursussen</td><td>Vaardigheden</td><td>Certificaten</td><td>Skills</td><td>Competenties</td><td>beschikbaar-van</td><td>beschikbaar-tot</td><td>Niet beschikbaar-van</td><td>Niet beschikbaar-tot</td><td>prijsklasse</td></tr>";
 			foreach($results as $result){
