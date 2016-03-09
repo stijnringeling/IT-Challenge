@@ -21,8 +21,23 @@
 			}
 		}
 	?>
+	<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
 	<body>
+	<div class="header">
+		<div id="homebutton" class="headerbutton">
+Home
+		</div>
+		<div id="addprojectbutton" class="headerbutton">
+Project toevoegen
+		</div>
+		<div id="addresourcebutton" class="headerbutton">
+Resource toevoegen
+		</div>
+		<div id="inlogbutton" class="headerbutton">
+Inloggen
+		</div>
+		</div>
 	<?php
 		if(sizeof($results) == 0){
 		}else{
