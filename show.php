@@ -8,7 +8,7 @@
 	<head>
 		<?php
 			if(isset($_GET["ID"])){
-				$query = "SELECT * FROM resources_goed WHERE ID = " . $_GET["ID"];
+				$query = "SELECT * FROM Resources_goed WHERE ID = " . $_GET["ID"];
 				$functie_query = "SELECT * FROM Picklist";
 				if(!$functie_result = mysql_query($functie_query, $db)){
 					$errors  .= "Error";
