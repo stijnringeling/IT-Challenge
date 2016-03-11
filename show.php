@@ -7,8 +7,12 @@
 <html>
 	<head>
 		<?php
-			if(isset($_GET["ID"])){
-				$query = "SELECT * FROM Resources_goed WHERE ID = " . $_GET["ID"];
+			if(isset($_GET["ID"], $_GET["type"])){
+				if($_GET["type"] == "R"){
+					$query = "SELECT * FROM Resources_goed WHERE ID = " . $_GET["ID"];
+				}else{
+					$query = "SELECT * FROM projecten INNER JOIN functies ON ID = functie_ID WHERE ID = " . $_GET["ID"];
+				}
 				$functie_query = "SELECT * FROM Picklist";
 				if(!$functie_result = mysql_query($functie_query, $db)){
 					$errors  .= "Error";
@@ -26,15 +30,24 @@
 	<body>
 		<?php
 			echo $errors;
-			echo $user->ID;
 			if($result != ""){
 				while($row = mysql_fetch_assoc($result)){
 					foreach($row as $key => $value){
-						if($key == "Functies"){
-							$value = $functies[$value];
-						}
-						if($key != "Public"){
-							echo "$key: $value<br/>";
+						if($value != ""){
+							if($key == "Functies"){
+								$value = $functies[$value];
+							}
+							for($i = 1; $i <= 10; $i++){
+								if($key == "Functie$i"){
+									$value = $functies[$value];
+								}
+							}
+							if($key == "Fulltime"){
+								$value = $value == 1 ? "Ja" : "Nee";
+							}
+							if($key != "Public" && $key != "functie_ID"){
+								echo "$key: $value<br/>";
+							}
 						}
 					}
 				}

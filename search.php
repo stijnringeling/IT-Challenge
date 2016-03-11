@@ -29,7 +29,11 @@
 		if(sizeof($results) == 0){
 		}else{
 			echo "<table border=1px>";
-			echo "<tr><td>ID</td><td>Functie</td><td>Opleiding</td><td>Cursussen</td><td>Vaardigheden</td><td>Certificaten</td><td>Skills</td><td>Competenties</td><td>beschikbaar-van</td><td>beschikbaar-tot</td><td>Niet beschikbaar-van</td><td>Niet beschikbaar-tot</td><td>prijsklasse</td></tr>";
+			if($type == "R"){
+				echo "<tr><td>ID</td><td>Functie</td><td>Opleiding</td><td>Cursussen</td><td>Vaardigheden</td><td>Certificaten</td><td>Skills</td><td>Competenties</td><td>beschikbaar-van</td><td>beschikbaar-tot</td><td>Niet beschikbaar-van</td><td>Niet beschikbaar-tot</td><td>prijsklasse</td></tr>";
+			}else{
+				echo "<tr><td>ID</td><td>Functie</td><td>Naam</td><td>Plaats</td><td>Startdatum</td><td>Werktijd</td></tr>";
+			}
 			foreach($results as $result){
 				//echo $result;
 					while($row = mysql_fetch_assoc($result)){
@@ -38,9 +42,16 @@
 						}else{
 							$tr = "<tr><td><a href=\"show.php?ID=" . $row["ID"] . "&type=$type\">" . $row["ID"] . "</a></td><td>";
 							for($i= 1; $i <= 10; $i++){
-								$tr .= $functies[$row["Functie$i"]];
+								if($functies[$row["Functie$i"]] != ""){
+									$tr .= $functies[$row["Functie$i"]];
+								}
 							}
 							$tr .= "</td>";
+							$tr .= "<td>" . $row["Naam"] . "</td>";
+							$tr .= "<td>" . $row["Plaats"] . "</td>";
+							$tr .= "<td>" . $row["Startdatum"] . "</td>";
+							$tr .= "<td>" . $row["Uren"] . "</td>";
+							$tr .= "</tr>";
 							echo $tr;
 						}
 					}
