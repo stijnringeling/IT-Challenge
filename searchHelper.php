@@ -14,7 +14,7 @@
 			$Picklist = getPicklist($db);
 			while(list($id, $functie) = mysql_fetch_row($Picklist)){
 				if(stristr($search, substr($functie, 0, strlen($search))) && strlen($functie) >= strlen($search)){
-					$query = "SELECT * FROM Projecten INNER JOIN Functies ON ID = functie_ID WHERE ";
+					$query = "SELECT * FROM projecten INNER JOIN functies ON ID = functie_ID WHERE ";
 					for($i = 1; $i<=10; $i++){
 						if($i != 10){
 							$query .= "Functie$i = $id OR ";
