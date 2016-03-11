@@ -59,7 +59,7 @@ else
 					$sessionID .= $characters[rand(0, strlen($characters) - 1)];
 				}
 				//echo $sessionID;
-				$query2 = "INSERT sessionID (ID, sessionID) VALUES('" . $row["User_id"] . "','" . $sessionID . "') ON DUPLICATE KEY UPDATE sessionID = '" . $sessionID . "'";
+				$query2 = "INSERT sessionid (ID, sessionID) VALUES('" . $row["User_id"] . "','" . $sessionID . "') ON DUPLICATE KEY UPDATE sessionID = '" . $sessionID . "'";
 				$result2 = "";
 				if(!$result2 = mysql_query($query2, $db)){
 					echo "Error in query $query2";
