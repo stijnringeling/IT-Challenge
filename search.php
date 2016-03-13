@@ -37,22 +37,24 @@
 			foreach($results as $result){
 				//echo $result;
 					while($row = mysql_fetch_assoc($result)){
-						if($type == "R"){
-						echo "<tr><td><a href=\"show.php?ID=" . $row["ID"] . "&type=$type\">" . $row["ID"] . "</a></td><td>" . $functies[$row["Functies"]] . "</td><td>" . $row["Opleiding"] . "</td><td>" . $row["Cursussen"] . "</td><td>" . $row["vaardigheden"] . "</td><td>" . $row["Certificaten_naam"] . "</td><td>" . $row["Skills"] . "</td><td>"  . $row["Competenties"] . "</td><td>" . $row["Beschikbaarheid_van"] . "</td><td>" . $row["Beschikbaarheid_tot"] . "</td><td>" . $row["Niet_Beschikbaarheid_van"] . "</td><td>" . $row["Niet_Beschikbaarheid_tot"] . "</td><td>" . $row["Tarief_p/u"] . "</td></tr>";
-						}else{
-							$tr = "<tr><td><a href=\"show.php?ID=" . $row["ID"] . "&type=$type\">" . $row["ID"] . "</a></td><td>";
-							for($i= 1; $i <= 10; $i++){
-								if($functies[$row["Functie$i"]] != ""){
-									$tr .= $functies[$row["Functie$i"]];
+						if($row["Public"] == 1){
+							if($type == "R"){
+							echo "<tr><td><a href=\"show.php?ID=" . $row["ID"] . "&type=$type\">" . $row["ID"] . "</a></td><td>" . $functies[$row["Functies"]] . "</td><td>" . $row["Opleiding"] . "</td><td>" . $row["Cursussen"] . "</td><td>" . $row["vaardigheden"] . "</td><td>" . $row["Certificaten_naam"] . "</td><td>" . $row["Skills"] . "</td><td>"  . $row["Competenties"] . "</td><td>" . $row["Beschikbaarheid_van"] . "</td><td>" . $row["Beschikbaarheid_tot"] . "</td><td>" . $row["Niet_Beschikbaarheid_van"] . "</td><td>" . $row["Niet_Beschikbaarheid_tot"] . "</td><td>" . $row["Tarief_p/u"] . "</td></tr>";
+							}else{
+								$tr = "<tr><td><a href=\"show.php?ID=" . $row["ID"] . "&type=$type\">" . $row["ID"] . "</a></td><td>";
+								for($i= 1; $i <= 10; $i++){
+									if($functies[$row["Functie$i"]] != ""){
+										$tr .= $functies[$row["Functie$i"]];
+									}
 								}
+								$tr .= "</td>";
+								$tr .= "<td>" . $row["Naam"] . "</td>";
+								$tr .= "<td>" . $row["Plaats"] . "</td>";
+								$tr .= "<td>" . $row["Startdatum"] . "</td>";
+								$tr .= "<td>" . $row["Uren"] . "</td>";
+								$tr .= "</tr>";
+								echo $tr;
 							}
-							$tr .= "</td>";
-							$tr .= "<td>" . $row["Naam"] . "</td>";
-							$tr .= "<td>" . $row["Plaats"] . "</td>";
-							$tr .= "<td>" . $row["Startdatum"] . "</td>";
-							$tr .= "<td>" . $row["Uren"] . "</td>";
-							$tr .= "</tr>";
-							echo $tr;
 						}
 					}
 				}
