@@ -12,7 +12,7 @@
 </p>
 <p>
 <label for="Password">Password</label>
-<input type="text" id="password" name="Password" value="" maxlength="20" />
+<input type="password" id="password" name="Password" value="" maxlength="20" />
 </p>
 <p>
 <label for="Email">E-mail</label>
