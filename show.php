@@ -20,7 +20,7 @@
 				}else{
 					$query = "SELECT * FROM projecten INNER JOIN functies ON ID = functie_ID WHERE ID = " . $_GET["ID"];
 					if(isset($user->ID)){
-						$query2 = "SELECT * FROM betalingen_projecten WHERE user_id = " . $user->ID . "AND naw_ID = " . $_GET["ID"];
+						$query2 = "SELECT * FROM betalingen_projecten INNER JOIN naw_projecten ON naw_ID = ID WHERE user_ID = " . $user->ID . " AND naw_ID = " . $_GET["ID"];
 					}
 				}
 				$functie_query = "SELECT * FROM Picklist";
