@@ -15,9 +15,9 @@
 							if(data[0].length != 0){
 								$.each(data[0], function(key, value){
 									if(resultString == ""){
-										resultString = value;
+										resultString = "<li>" + value + "</li>";
 									}else{
-										resultString += "<br/>" + value;
+										resultString += "<li>" + value + "</li>";
 									}
 								});
 							}
@@ -35,25 +35,25 @@
 	<body>
 
 		<div class="header">
-		<div id="homebutton" class="headerbutton">
+		<a href="index.php"><div id="homebutton" class="headerbutton">
 Home
-		</div>
+		</div></a>
 		<div id="addprojectbutton" class="headerbutton">
 Project toevoegen
 		</div>
 		<div id="addresourcebutton" class="headerbutton">
 Resource toevoegen
 		</div>
-		<div id="inlogbutton" class="headerbutton">
+<a href="login.php"><div id="inlogbutton" class="headerbutton">
 Inloggen
-		</div>
+		</div></a>
 		</div>
 		<div class="content">
 			<form method="GET" action="search.php">
 				<div id="nummer" class="count">0</div>
-				<div id="input" class="center"><input type="text" name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/></div>
+				<div id="input" class="center"><input type="text" name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"><br/><ul class="results"></ul></div>
 				<div id="button" class="center"><input type="submit" value="T"/></div>
-				<p class="results"></p>
+				
 			</form>
 		</div>
 		<div class="footer">

@@ -49,6 +49,18 @@ border-width: 1px;
 {
 margin-right: 5%;
 }
+.results
+{
+float: left;
+background-color: #00acfd;
+position: relative;
+left: 35%;
+top: 200px;
+}
+ul
+{
+    list-style-type: none;
+}
 .footer
 {
 background-color: #71cee7;

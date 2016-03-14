@@ -24,19 +24,19 @@
 <link rel="stylesheet" type="text/css" href="index.css">		
 	</head>
 	<body>
-	<div class="header">
+	<a href="index.php"><div class="header">
 		<div id="homebutton" class="headerbutton">
 Home
-		</div>
+		</div></a>
 		<div id="addprojectbutton" class="headerbutton">
 Project toevoegen
 		</div>
 		<div id="addresourcebutton" class="headerbutton">
 Resource toevoegen
 		</div>
-		<div id="inlogbutton" class="headerbutton">
+		<a href="login.php"><div id="inlogbutton" class="headerbutton">
 Inloggen
-		</div>
+		</div></a>
 		</div>
 		<?php
 			echo $errors;
