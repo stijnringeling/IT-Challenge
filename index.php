@@ -1,6 +1,6 @@
 <html>
-	<head>
-		<!--jquery ajax script-->
+<head>
+<!--jquery ajax script-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script type="text/javascript">
 			lastInput = "";
@@ -14,11 +14,12 @@
 							var resultString = "";
 							if(data[0].length != 0){
 								$.each(data[0], function(key, value){
-									if(resultString == ""){
+									resultString += "<li>" + value + "</li><br/>";
+									/*if(resultString == ""){
 										resultString = value;
 									}else{
 										resultString += "<br/>" + value;
-									}
+									}*/
 								});
 							}
 							$(".results").html(resultString);
@@ -29,34 +30,31 @@
 				}
 			}
 		</script>
-		<title>ITchallenge</title>
-		<link rel="stylesheet" type="text/css" href="index.css">
-	</head>
-	<body>
+<title>IT-challenge</title>
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+<div class="center">
+<div class="header">
+<ul>
+  <li><a href="default.asp">Home</a></li>
+  <li><a href="news.asp">+ Project</a></li>
+  <li><a href="contact.asp">+ Resource</a></li>
+  <li><a href="about.asp">Log in</a></li>
+  <li><a href="about.asp">Register</a></li>
+</ul>
+</div>
+<div class="centermid">
+			
 
-		<div class="header">
-		<div id="homebutton" class="headerbutton">
-Home
-		</div>
-		<div id="addprojectbutton" class="headerbutton">
-Project toevoegen
-		</div>
-		<div id="addresourcebutton" class="headerbutton">
-Resource toevoegen
-		</div>
-		<div id="inlogbutton" class="headerbutton">
-Inloggen
-		</div>
-		</div>
-		<div class="content">
-			<form method="GET" action="search.php">
-				<div id="nummer" class="count">0</div>
-				<div id="input" class="center"><input type="text" name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/></div>
-				<div id="button" class="center"><input type="submit" value="T"/></div>
-				<p class="results"></p>
-			</form>
-		</div>
-		<div class="footer">
-		</div>
-	</body>
+				 <form method="GET" action="search.php">
+				<div id="nummer"  class="count">0</div>
+					
+					
+				<input id="input" type="text" placeholder="Search..." name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/><input type="submit" id="button" value="">
+				<ul class="results"></ul>
+				</form>
+				
+</div>
+</body>
 </html>
