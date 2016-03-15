@@ -21,30 +21,32 @@
 			}
 		}
 	?>
-	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="search.css">
 	</head>
 	<body>
-	<div class="header">
-		<div id="homebutton" class="headerbutton">
-Home
-		</div>
-		<div id="addprojectbutton" class="headerbutton">
-Project toevoegen
-		</div>
-		<div id="addresourcebutton" class="headerbutton">
-Resource toevoegen
-		</div>
-		<div id="inlogbutton" class="headerbutton">
-Inloggen
-		</div>
-		</div>
+	<div class="center">
+<div class="header">
+<ul>
+  <li><a href="index.php">Home</a></li>
+  <li><a href="news.asp">+ Project</a></li>
+  <li><a href="contact.asp">+ Resource</a></li>
+  <li><a href="about.asp">Log in</a></li>
+  <li><a href="about.asp">Register</a></li>
+</ul>
+</div>
+<div class="centerresults">
+
+
+	
 	<?php
 		if(sizeof($results) == 0){
 		}else{
+
 			echo "<table border=1px>";
 			echo "<tr><td>ID</td><td>Functie</td><td>Opleiding</td><td>Cursussen</td><td>Vaardigheden</td><td>Certificaten</td><td>Skills</td><td>Competenties</td><td>beschikbaar-van</td><td>beschikbaar-tot</td><td>Niet beschikbaar-van</td><td>Niet beschikbaar-tot</td><td>prijsklasse</td></tr>";
+
 			foreach($results as $result){
-				//echo $result;
+				//echo $result ;
 				while($row = mysql_fetch_assoc($result)){
 					echo "<tr><td><a href=\"show.php?ID=" . $row["ID"] . "\">" . $row["ID"] . "</a></td><td>" . $functies[$row["Functies"]] . "</td><td>" . $row["Opleiding"] . "</td><td>" . $row["Cursussen"] . "</td><td>" . $row["vaardigheden"] . "</td><td>" . $row["Certificaten_naam"] . "</td><td>" . $row["Skills"] . "</td><td>"  . $row["Competenties"] . "</td><td>" . $row["Beschikbaarheid_van"] . "</td><td>" . $row["Beschikbaarheid_tot"] . "</td><td>" . $row["Niet_Beschikbaarheid_van"] . "</td><td>" . $row["Niet_Beschikbaarheid_tot"] . "</td><td>" . $row["Tarief"] . "</td></tr>";
 				}
@@ -52,5 +54,8 @@ Inloggen
 			echo "</table>";
 		}
 	?>
+</div>
 	</body>
 </html>
+				
+
