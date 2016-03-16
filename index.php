@@ -29,6 +29,10 @@
 					});
 				}
 			}
+			
+			function updateType(){
+				getHints(lastInput);
+			}
 		</script>
 
 <title>IT-challenge</title>
@@ -50,8 +54,8 @@
 
 				 <form method="GET" action="search.php">
 				<div id="nummer"  class="count">0</div>
-					
-					
+				<input type="radio" name="type" value="R" checked onclick="updateType();">R</input>
+				<input type="radio" name="type" value="P" onclick="updateType();">P</input>
 				<input id="input" type="text"  placeholder="Search..." name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/><input type="submit" id="button" value="">
 				
 
