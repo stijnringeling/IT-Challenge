@@ -1,7 +1,7 @@
 <?php
 	class User {
 		function __construct($sessionID, $db){
-			$this->sessionID = $sessionID;F
+			$this->sessionID = $sessionID;
 			$this->db = $db;
 			$querys = Array();
 			$querys[] = "SELECT ID FROM sessionid WHERE sessionID LIKE '" . $this->sessionID . "'";
