@@ -1,10 +1,10 @@
 <?php
 	class User {
 		function __construct($sessionID, $db){
-			$this->sessionID = $sessionID;
+			$this->sessionID = $sessionID;F
 			$this->db = $db;
 			$querys = Array();
-			$querys[] = "SELECT ID FROM sessionID WHERE sessionID LIKE '" . $this->sessionID . "'";
+			$querys[] = "SELECT ID FROM sessionid WHERE sessionID LIKE '" . $this->sessionID . "'";
 			$this->getData($querys);
 			$querys2 = Array();
 			$querys2[] = "SELECT Username, email FROM users WHERE User_id = '" . $this->ID . "'";
