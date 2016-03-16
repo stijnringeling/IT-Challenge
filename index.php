@@ -4,14 +4,11 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script type="text/javascript">
 			lastInput = "";
-			type = "R";
-			lastType = "R";
 			function getHints(text){
-				type = $('input[name=type]:checked').val();
-				if(lastInput != text || lastType != type){
+				if(lastInput != text){
 					$.ajax({
 						url: "getHints.php",
-						data: {"search": text, "type": type},
+						data: {"search": text},
 						dataType: "json",
 						success: function(data, status, j){
 							var resultString = "";
@@ -28,7 +25,6 @@
 							$(".results").html(resultString);
 							$(".count").html(data[1]);
 							lastInput = text;
-							lastType = type;
 						}
 					});
 				}
@@ -53,13 +49,18 @@
 </ul>
 </div>
 <div class="centermid">
+			
 				 <form method="GET" action="search.php">
 				<div id="nummer"><div class="count">0</div></div>
-					
-					
-				<input id="input" type="text" placeholder="Search..." name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/><input type="submit" id="button" value="">
-				<ul class="results"></ul>
+				<input type="radio" name="type" value="R" checked onclick="updateType();">R</input>
+				<input type="radio" name="type" value="P" onclick="updateType();">P</input>
+				<input id="input" type="text"  placeholder="Search..." name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/><input type="submit" id="button" value="">
+				
+
+     <ul class="results"></ul>
+
 				</form>
+
 				
 </div>
 </body>

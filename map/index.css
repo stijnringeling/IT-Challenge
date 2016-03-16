@@ -1,0 +1,152 @@
+body{	
+	background-image: url("image1.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	
+	margin:0px;
+	
+}
+.center {
+	
+	height:100%;
+	width:100%;
+	
+   	margin-left: auto ;
+	margin-right: auto ;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+.header {
+	height:10%;
+	width:100%;
+	
+   	margin-left: auto ;
+	margin-right: auto ;
+	background-color:#0fcabf;
+	padding-top:"auto";	
+	padding-bottom:"auto";			/* om de knoppenbalk te verplaatsen */
+}
+.centermid {
+	top:85%;
+	
+	width:40%;
+	
+   	margin-left: auto ;
+	margin-right: auto ;
+	margin-top:0px;
+	margin-bottom:0px;
+
+}
+#input{
+	height:6%;
+	width:83.64%;
+	margin-left: auto ;
+	margin-right: auto ;
+	margin-top:50%;
+	float:left;
+	text-alignment:center;
+	font-family:Tahoma;
+	font-size:20px;
+	
+	
+}
+
+#input:hover {
+    	background-color:#ACFCFF;
+}
+
+
+
+	
+#button{
+ 	background-size: cover;
+  	border:none;
+ 	height:6%;
+  	width:8%;
+	margin-top:50%;
+	background-color:#0fcabf;
+	background-image: url("knop.png");
+	
+	
+	vertical-align: middle;
+}
+
+
+	
+#nummer{
+	
+	float:left;
+ 	height:5.89%;
+  	width:8%;
+	margin-top:50%;
+	background-color:#0fcabf;
+	color: white;
+	font-family:Tahoma;
+	font-size:30px;
+	font-weight: bold;
+	text-align:center;
+	
+	
+	
+	
+	
+	
+	
+}
+
+   	 	
+}
+
+ul {
+    	list-style-type: none;
+    	position: static;
+    	overflow: hidden;
+    	
+	
+}
+
+li {
+    	float: left;
+}
+
+li a {
+	font-family:Tahoma;
+	font-size:20px;
+	font-weight: bold;
+    	display: block;
+    	color: white;
+    	text-align: center;
+    	padding:20px;
+	margin-top:15px;
+    	text-decoration: none;
+}
+
+
+li a:hover {
+    	color: #111;
+}
+
+.results{
+	border: 1px solid black;
+	font-size:20px;
+	margin-top:-1px;
+	width:83.4%;
+	font-family:Tahoma;
+	background-color:#ffffff;
+	float:left;
+	padding-left:0;
+	margin-left:8%;
+		
+	}
+.results li:hover {
+    	background-color: #ACFCFF;
+	width:100%;
+}
+
+.results li{
+width:100%;
+}
+
+
+

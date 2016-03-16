@@ -68,7 +68,6 @@ body{
 	background-color:#0fcabf;
 	background-image: url("knop.png");
 	border:1px solid black;
-	
 	vertical-align: middle;
 }
 
@@ -78,7 +77,7 @@ body{
 	
 	float:left;
  	height:5.89%;
-	width:8%;
+  	width:8%;
 	margin-top:50%;
 	background-color:#0fcabf;
 	color: white;
@@ -92,8 +91,13 @@ body{
 {
 margin-top:12%;
 }
-   	 	
-}
+	
+	
+	
+	
+	
+	
+
 
 ul {
     	list-style-type: none;
@@ -125,24 +129,24 @@ li a:hover {
 }
 
 .results{
-border: 1px solid black;
+	border: 1px solid black;
 	font-size:20px;
-	margin:0px;
-	width:84%;
+	margin-top:-1px;
+	width:83.4%;
 	font-family:Tahoma;
-	margin-left: auto ;
-	margin-right: auto ;
 	background-color:#ffffff;
-	padding:0;
+	float:left;
+	padding-left:0;
+	margin-left:8%;
+		
+	}
+.results li:hover {
+    	background-color: #ACFCFF;
+	width:100%;
 }
 
-/* vanaf hier begint de code voor search.php */
-.centerresults{
-width:80%;
-height:90%;
-background-color:rgba(255,255,255,0.9);
-overflow-y:scroll;
-margin-left:10%;
-
+.results li{
+width:100%;
 }
+
 

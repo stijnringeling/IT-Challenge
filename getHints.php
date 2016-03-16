@@ -15,7 +15,6 @@
 		}
 		echo json_encode($return);
 	}
-
 		
 	function getHints($search, $db){
 		$hints = Array();
