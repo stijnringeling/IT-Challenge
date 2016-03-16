@@ -27,7 +27,7 @@
 							$(".results").html(resultString);
 							$(".count").html(data[1]);
 							lastInput = text;
-							lastType = type;
+							lastType = type;//test
 						}
 					});
 				}
