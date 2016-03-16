@@ -45,19 +45,15 @@
 <link rel="stylesheet" type="text/css" href="index.css">		
 	</head>
 	<body>
-	<a href="index.php"><div class="header">
-		<div id="homebutton" class="headerbutton">
-Home
-		</div></a>
-		<div id="addprojectbutton" class="headerbutton">
-Project toevoegen
-		</div>
-		<div id="addresourcebutton" class="headerbutton">
-Resource toevoegen
-		</div>
-		<a href="login.php"><div id="inlogbutton" class="headerbutton">
-Inloggen
-		</div></a>
+	<div class="header">
+<ul>
+  <li><a href="index.php">Home</a></li>
+  <li><a href="news.asp">+ Project</a></li>
+  <li><a href="contact.asp">+ Resource</a></li>
+  <li><a href="about.asp">Log in</a></li>
+  <li><a href="about.asp">Register</a></li>
+</ul>
+</div>
 		</div>
 		<?php
 			echo $errors;

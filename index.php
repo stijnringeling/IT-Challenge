@@ -54,7 +54,7 @@
 </div>
 <div class="centermid">
 				 <form method="GET" action="search.php">
-				<div id="nummer"  class="count">0</div>
+				<div id="nummer"><div class="count">0</div></div>
 					
 					
 				<input id="input" type="text" placeholder="Search..." name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/><input type="submit" id="button" value="">

@@ -78,7 +78,7 @@ body{
 	
 	float:left;
  	height:5.89%;
-  	width:8%;
+	width:8%;
 	margin-top:50%;
 	background-color:#0fcabf;
 	color: white;
@@ -86,15 +86,12 @@ body{
 	font-size:30px;
 	font-weight: bold;
 	text-align:center;
-	border:1px solid black;
-	
-	
-	
-	
-	
-	
+	border:1px solid black;	
 }
-
+.count
+{
+margin-top:12%;
+}
    	 	
 }
 
