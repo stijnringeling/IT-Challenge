@@ -61,7 +61,7 @@
 							if($key == "Fulltime"){
 								$value = $value == 1 ? "Ja" : "Nee";
 							}
-							if($key != "Public" && $key != "functie_ID"){
+							if($key != "Public" && $key != "functie_ID" && $key != "user_ID"){
 								echo "$key: $value<br/>";
 							}
 						}
