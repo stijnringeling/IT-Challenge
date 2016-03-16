@@ -47,7 +47,7 @@
 										if($i == 1){
 											$tr .= $functies[$row["Functie$i"]];
 										}else{
-											$tr .= ", " . $functies[$row["functie$i"]];
+											$tr .= ", " . $functies[$row["Functie$i"]];
 										}							
 									}
 								}
