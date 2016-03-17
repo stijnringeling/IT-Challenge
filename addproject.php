@@ -65,7 +65,7 @@ VALUES ('$id', '$achternaam', '$voornaam')";
 	}else{
 		$functie = $_POST["Functie"];
 		$functies = explode(",", $functie);
-		$query = "INSERT INTO `itchallenge`.`functies` (`functie_ID`,";
+		$query = "INSERT INTO `ITchallenge`.`functies` (`functie_ID`,";
 		for($i = 1; $i <= 10; $i++){
 			if($i == 1){
 				$query .= "`Functie$i`";
