@@ -2,7 +2,7 @@
 	session_start();
 	include_once("db_connect.inc.php");
 	include_once("User.php");
-	if(isset($_SESSION["logged_in"], $_SESSION["sessionID"])){
+	if(isset($_SESSION["logged_in"], $_SESSION["sessionID"]) && $_SESSION["logged_in"] == true){
 		$user = new User($_SESSION["sessionID"], $db);
 	}
 	$functies = Array();
@@ -72,7 +72,7 @@
 							if($key == "Fulltime"){
 								$value = $value == 1 ? "Ja" : "Nee";
 							}
-							if($key != "Public" && $key != "functie_ID"){
+							if($key != "Public" && $key != "functie_ID" && $key != "user_ID"){
 								echo "$key: $value<br/>";
 							}
 						}

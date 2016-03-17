@@ -28,7 +28,7 @@ body{
 	margin-right: auto ;
 	margin-top:0px;
 	margin-bottom:0px;
-
+	
 }
 #input{
 	height:6%;
@@ -124,4 +124,6 @@ margin-top:42%;
 width:100%;
 float:left;
 margin-left:8%;
+}
+.fade{display:none;
 }

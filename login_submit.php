@@ -3,8 +3,9 @@ include_once("db_connect.inc.php");
 /*** begin our session ***/
 session_start();
 $message = "";
+$from = $_POST["from"];
 /*** check if the users is already logged in ***/
-if(isset( $_SESSION['logged_in']) && $_SESSION["logged_in"])
+if(isset( $_SESSION['logged_in']) && $_SESSION["logged_in"] == true)
 {
     $message = 'User is already logged in';
 }
@@ -52,7 +53,7 @@ else
 			if(password_verify($Password, $hash)){
 				//$logged_in = true;
 				$_SESSION["logged_in"] = true;
-				$message = "You are succesfully logged in";
+				$message = "You are succesfully logged in and will be redirected in 3 seconds";
 				$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 				$sessionID = '';
 				for($i = 0; $i < 20; $i++){
@@ -65,6 +66,9 @@ else
 					echo "Error in query $query2";
 				}else{
 					$_SESSION["sessionID"] = $sessionID;
+					if($from != ""){
+						header("Refresh:3; url=$from");
+					}
 				}
 			}else{
 				//$logged_in = false;
@@ -81,6 +85,8 @@ else
 <title>Login</title>
 </head>
 <body>
-<p><?php echo $message; ?>
+<p><?php 
+echo $message;
+ ?>
 </body>
 </html>
