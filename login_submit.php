@@ -4,7 +4,7 @@ include_once("db_connect.inc.php");
 session_start();
 $message = "";
 /*** check if the users is already logged in ***/
-if(isset( $_SESSION['logged_in']) && $_SESSION["logged_in"])
+if(isset( $_SESSION['logged_in']) && $_SESSION["logged_in"] == true)
 {
     $message = 'User is already logged in';
 }
