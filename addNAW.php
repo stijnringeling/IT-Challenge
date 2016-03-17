@@ -44,7 +44,7 @@ $tarief_bruto_maand = $_POST["Tarief_bruto_maand"];
 $tarief_bruto_jaar = &$_POST["Taried_bruto_jaar"];
 $user_ID = $user->ID;
 
-$query = "INSERT into `itchallenge` . `Resources_goed` (`Functies`, `Opleiding_van`, `Opleiding_tot`, `Opleiding`, `Opleiding_vakken`, `Opleiding_diploma`, `Opleiding_jaar`, `Cursussen_van`, `Cursussen_tot`
+$query = "INSERT into `ITchallenge` . `Resources_goed` (`Functies`, `Opleiding_van`, `Opleiding_tot`, `Opleiding`, `Opleiding_vakken`, `Opleiding_diploma`, `Opleiding_jaar`, `Cursussen_van`, `Cursussen_tot`
 		, `Cursussen`, `Cursussen_omschr`, `Cursussen_diploma`, `Cursussen_jaar`, `vaardigheden`, `vaardigheden_jaren`, `vaardigheden_van`, `vaardigheden_tot`
 		, `Certificaten_naam`, `Certificaten_omschr`, `Certificaten_jaar`, `Skills`, `Competenties`, `Hobby's`, `Beschikbaarheid_van`, `Beschikbaarheid_tot`
 		, `Niet_Beschikbaarheid_van`, `Niet_Beschikbaarheid_tot`, `Public`, `Tarief_u`, `Tarief_klasse`, `Tarief_bruto_maand`, `Tarief_bruto_jaar`, `user_ID`)
@@ -78,7 +78,7 @@ $bstaat = $_POST["Bstaat"];
 $rijb = $_POST["Rijbewijs"];
 $auto = $_POST["Auto"];
 
-$query2 = "INSERT INTO `itchallenge` . `naw_resources` (`id`, `Achternaam`, `Voorvoegsel`, `Voorletters`, `Voornaam`, `Roepnaam`, `Woonadres`, `Postcode`, `Plaats`, `Land`, `Thuis`, `Werk`, `Mobiel`, `E-mail1`, `E-mail2`, `Geboortedatum`, `Geboorteplaats`, `Nationaliteit`, `Bstaat`, `Rijbewijs`, `Auto`) 
+$query2 = "INSERT INTO `ITchallenge` . `naw_resources` (`id`, `Achternaam`, `Voorvoegsel`, `Voorletters`, `Voornaam`, `Roepnaam`, `Woonadres`, `Postcode`, `Plaats`, `Land`, `Thuis`, `Werk`, `Mobiel`, `E-mail1`, `E-mail2`, `Geboortedatum`, `Geboorteplaats`, `Nationaliteit`, `Bstaat`, `Rijbewijs`, `Auto`) 
 VALUES ('$id', '$achternaam', '$voorvoegsel', '$voorletters', '$voornaam', '$roepnaam', '$woonadres', '$postcode', '$plaats', '$land', '$thuis', '$werk', '$mobiel', '$email1', '$email2', '$gdatum', '$gplaats', '$natio', '$bstaat', '$rijb', '$auto')";
 
 if(!mysql_query($query2)){
