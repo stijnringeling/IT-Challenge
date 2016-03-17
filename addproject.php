@@ -58,8 +58,8 @@ else{
 	$bstaat = $_POST["Bstaat"];
 	$rijb = $_POST["Rijbewijs"];
 	$auto = $_POST["Auto"];
-	$query = "INSERT INTO `ITchallenge` . `naw_projecten` (`ID`, `Achternaam`, `Voorvoegsel`, `Voorletters`, `Voornaam`, `Roepnaam`, `Woonadres`, `Postcode`, `Plaats`, `Land`, `Thuis`, `Werk`, `Mobiel`, `E-mail1`, `E-mail2`, `Geboortedatum`, `Geboorteplaats`, `Nationaliteit`, `Bstaat`, `Rijbewijs`, `Auto`) 
-VALUES ('$id', '$achternaam', '$voorvoegsel', '$voorletters', '$voornaam', '$roepnaam', '$woonadres', '$postcode', '$plaats', '$land', '$thuis', '$werk', '$mobiel', '$email1', '$email2', '$gdatum', '$gplaats', '$natio', '$bstaat', '$rijb', '$auto')";
+	$query = "INSERT INTO `ITchallenge` . `naw_projecten` (`ID`, `Achternaam`, `Voornaam`) 
+VALUES ('$id', '$achternaam', '$voornaam')";
 	if(!mysql_query($query, $db)){
 		echo "error in query $query";
 	}else{
