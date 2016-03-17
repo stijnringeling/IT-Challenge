@@ -47,7 +47,7 @@
 </ul>
 </div>
 <div class="hidden">
-<div class="centerresults">
+<div class="centermid">
 	<?php
 		if(sizeof($results) == 0){
 		}else{
