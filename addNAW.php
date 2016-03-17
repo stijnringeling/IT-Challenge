@@ -67,6 +67,33 @@ else{
 <body>
 <h2>Add Resource</h2>
 <form method="post" action="<?php echo $_SERVER["PHP_SELF"] ?>"><table>
+<tr><td>Functie</td><td><input type="text" name="Functie"></td></tr>
+<tr><td>Opleiding van</td><td><input type="text" name="Opleiding_van"></td></tr>
+<tr><td>Opleiding tot</td><td><input type="text" name="Opleiding_tot"></td></tr>
+<tr><td>Opleiding</td><td><input type="text" name="Opleiding"></td></tr>
+<tr><td>Opleiding vakken</td><td><input type="text" name="Opleiding_vakken"></td></tr>
+<tr><td>Opleiding diploma</td><td><input type="radio" name="Opleiding_diploma" value="1">Ja</td><td><td><input type="radio" name="Opleiding_diploma" value="0">Nee</tr>
+<tr><td>Cursussen van</td><td><input type="text" name="Cursussen_van"></td></tr>
+<tr><td>Cursussen tot</td><td><input type="text" name="Cursussen_tot"></td></tr>
+<tr><td>Cursussen</td><td><input type="text" name="Cursussen"></td></tr>
+<tr><td>Cursussen omschrijving</td><td><input type="text" name="Cursussen_omschr"></td></tr>
+<tr><td>Cursussen diploma</td><td><input type="radio" name="Cursussen_diploma" value="1">Ja</td><td><input type="radio" name="Cursussen_diploma" value="0">Nee</td></tr>
+<tr><td>Cursussen jaar</td><td><input type="text" name="Cursussen_jaar"></td></tr>
+<tr><td>Vaardigheden</td><td><input type="text" name="Vaardigheden"></td></tr>
+<tr><td>Vaardigheden jaren</td><td><input type="text" name="Vaardigheden_jaren"></td></tr>
+<tr><td>Vaardigheden van</td><td><input type="text" name="Vaardigheden_van"></td></tr>
+<tr><td>Vaardigheden tot</td><td><input type="text" name="Vaardigheden_tot"></td></tr>
+<tr><td>Certificaten naam</td><td><input type="text" name="Certificaten_naam"></td></tr>
+<tr><td>Certificaten omschrijving</td><td><input type="text" name="Certificaten_omschr"></td></tr>
+<tr><td>Certificaten jaar</td><td><input type="text" name="Certificaten_jaar"></td></tr>
+<tr><td>Skills</td><td><input type="text" name="Skills"></td></tr>
+<tr><td>Competenties</td><td><input type="text" name="Competenties"></td></tr>
+<tr><td>Hobby's</td><td><input type="text" name="Hobby"></td></tr>
+<tr><td>Beschikbaar van</td><td><input type="text" name="Beschikbaarheid_van"></td></tr>
+<tr><td>Beschikbaar tot</td><td><input type="text" name="Beschikbaarheid_tot"></td></tr>
+<tr><td>Niet beschikbaar van</td><td><input type="text" name="Niet_beschikbaarheid_van"></td></tr>
+<tr><td>Niet beschikbaar tot</td><td><input type="text" name="Niet_beschikbaarheid_tot"></td></tr>
+<tr><td>Public</td><td><input type="radio" name="Public" value="1">Ja</td><td><input type="radio" name="Public" value="0">Nee</tr>
 <tr><td>Achternaam: </td><td><input type="text" name="Achternaam"></td></tr>
 <tr><td>Voorvoegsel: </td><td><input type="text" name="Voorvoegsel"></td></tr>
 <tr><td>Voorletters: </td><td><input type="text" name="Voorletters"></td></tr>
