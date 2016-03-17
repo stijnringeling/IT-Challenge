@@ -161,7 +161,9 @@ else{
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    $('.hidden').slideDown(500);
+    $('.hidden').slideDown(500, function(){
+		$('body').height($('.hidden').height() + 400);
+	});
 });
 </script>
 </body>

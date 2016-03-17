@@ -65,7 +65,7 @@ else{
 <div class="centermid">
 </head>
 <body>
-<h2>Add NAW information</h2>
+<h2>Add Resource</h2>
 <form method="post" action="<?php echo $_SERVER["PHP_SELF"] ?>"><table>
 <tr><td>Achternaam: </td><td><input type="text" name="Achternaam"></td></tr>
 <tr><td>Voorvoegsel: </td><td><input type="text" name="Voorvoegsel"></td></tr>
