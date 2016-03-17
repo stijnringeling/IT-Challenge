@@ -41,9 +41,20 @@
 					}
 				}
 			}
-		?>			
+		?>	
+<link rel="stylesheet" type="text/css" href="index.css">		
 	</head>
 	<body>
+	<div class="header">
+<ul>
+  <li><a href="index.php">Home</a></li>
+  <li><a href="news.asp">+ Project</a></li>
+  <li><a href="contact.asp">+ Resource</a></li>
+  <li><a href="about.asp">Log in</a></li>
+  <li><a href="about.asp">Register</a></li>
+</ul>
+</div>
+		</div>
 		<?php
 			echo $errors;
 			if($result != ""){

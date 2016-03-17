@@ -90,32 +90,18 @@ $(document).ready(function(){
 
 <div class="centermid">
 			
-
 				 <form method="GET" action="search.php">
 <div id="radio"><input type="radio" class="radio_item" id="radio1" name="type" value="R" checked onclick="updateType();"></input>
 				<label class="label_item" for="radio1"> <img src="Rbutton.jpg"> </label>
 				<input type="radio" class="radio_item" id="radio2" name="type" value="P" onclick="updateType();"></input>
 				<label class="label_item" for="radio2"> <img src="Pbutton.jpg"> </label></div>
 
-
-				<div id="nummer"  class="count">0</div>
+				<div id="nummer"><div class="count">0</div></div>
 				<input id="input" type="text"  placeholder="Search..." name="q" onkeyup="getHints($(this).val());" autofocus autocomplete="off"/><input type="submit" id="button" value="">
 				
-
-     <ul class="results"></ul>
-				
-				
-				
-				
-		
+     <ul class="results"></ul>	
 
 </form>
-
-
-
-
-
-
 
 </div>				
 </div>

@@ -28,8 +28,6 @@
 		}
 	?>
 <title>search</title>
-
-
 <link rel="stylesheet" type="text/css" href="search.css">
 </head>
 <body>
@@ -49,8 +47,7 @@
 </ul>
 </div>
 <div class="hidden">
-<div class="centermid">
-
+<div class="centerresults">
 	<?php
 		if(sizeof($results) == 0){
 		}else{

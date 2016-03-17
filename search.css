@@ -2,153 +2,72 @@ body{
 	background-image: url("image1.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	
 	margin:0px;
-	
 }
 .center {
-	
 	height:100%;
 	width:100%;
-	
    	margin-left: auto ;
 	margin-right: auto ;
 	margin-top:0px;
 	margin-bottom:0px;
 }
-
 .header {
 	height:10%;
 	width:100%;
-	
    	margin-left: auto ;
 	margin-right: auto ;
 	background-color:#0fcabf;
 	padding-top:"auto";	
 	padding-bottom:"auto";			/* om de knoppenbalk te verplaatsen */
 }
-.centermid {
-	width:80%;
-	height:90%;
-	background-color:rgba(255,255,255,0.9);
-	overflow-y:hidden;
-	margin-left:10%;
-	text-align:center;
-	font-family:Tahoma;
-	font-size:20px;
-
-}
-#input{
-	height:6%;
-	width:83.64%;
-	margin-left: auto ;
-	margin-right: auto ;
-	margin-top:50%;
-	float:left;
-	text-alignment:center;
-	font-family:Tahoma;
-	font-size:20px;
-	border:1px solid black;
-	
-}
-
-#input:hover {
-    	background-color: rgba(160,255,170, 0.3);;
-}
-
-
-
-	
-#button{
- 	background-size: cover;
-  	border:none;
- 	height:6%;
-  	width:8%;
-	margin-top:50%;
-	background-color:#0fcabf;
-	background-image: url("knop.png");
-	border:1px solid black;
-	
-	vertical-align: middle;
-}
-
-
-	
-#nummer{
-	
-	float:left;
- 	height:5.89%;
-  	width:8%;
-	margin-top:50%;
-	background-color:#0fcabf;
-	color: white;
-	font-family:Tahoma;
-	font-size:30px;
-	font-weight: bold;
-	text-align:center;
-	border:1px solid black;
-	
-	
-	
-	
-	
-	
-
-
-   	 	
-}
-
 ul {
-    	list-style-type: none;
-    	position: static;
-    	overflow: hidden;
-    	
-	
+    list-style-type: none;
+    position: static;
+    overflow: hidden;
 }
-
 li {
-    	float: left;
+    float: left;
 }
-
 li a {
 	font-family:Tahoma;
 	font-size:20px;
 	font-weight: bold;
-    	display: block;
-    	color: white;
-    	text-align: center;
-    	padding:20px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding:20px;
 	margin-top:15px;
-    	text-decoration: none;
+    text-decoration: none;
 }
-
-
 li a:hover {
-    	color: #111;
+    color: #111;
 }
-
-.results{
-border: 1px solid black;
-	font-size:20px;
-	margin:0px;
-	width:83.64%;
-	font-family:Tahoma;
-	margin-left: auto ;
-	margin-right: auto ;
-	background-color:#ffffff;
-	padding:0;
+tr{
+	border:5px solid grey;
 }
-
-
+tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+td{
+	border:1px solid grey;
+}
+table{
+	border-collapse:collapse;
+}
 .centerresults{
-width:80%;
-height:90%;
-background-color:rgba(255,255,255,0.9);
-overflow-y:hidden;
-margin-left:10%;
-
+	border-radius: 15px;
+	border:10px solid grey;
+	margin-top:8%;
+	font-family:Tahoma;
+	text-align:center;
+	font-size:20px;
+	width:80%;
+	max-height:90%;
+	background-color:rgba(255,255,255,0.9);
+	overflow-y:hidden;
+	margin-left:10%;
 }
-
 .hidden{
  display:none;   
 }
