@@ -16,8 +16,10 @@
 						success: function(data, status, j){
 							var resultString = "";
 							if(data[0].length != 0){
+								counter = 0;
 								$.each(data[0], function(key, value){
-									resultString += "<li>" + value + "</li><br/>";
+									resultString += "<li id=\"hint" + counter + "\" onclick=\"hintClick('hint" + counter + "')\">" + value + "</li><br/>";
+									counter++;
 									/*if(resultString == ""){
 										resultString = value;
 									}else{
@@ -36,6 +38,12 @@
 			
 			function updateType(){
 				getHints(lastInput);
+			}
+			
+			function hintClick(id){
+				hint = $('#' + id).html();
+				$('#input').val(hint);
+				getHints(hint);
 			}
 		</script>
 
