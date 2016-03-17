@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	include_once("db_connect.inc.php");
+	include_once("User.php");
+	if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true){
+		$user = new User($_SESSION["sessionID"], $db);
+	}
+	$from = $_GET["from"];
+?>
 <html>
 <head>
 <title>Login</title>
@@ -12,8 +21,13 @@
   <li><a href="index.php">Home</a></li>
   <li><a href="addproject.php">+ Project</a></li>
   <li><a href="addNAW.php">+ Resource</a></li>
-  <li><a href="login.php">Log in</a></li>
-  <li><a href="adduser.php">Register</a></li>
+  <li><?php
+	if(isset($user->ID)){
+		echo "<a href=\"logout.php?from=index.php\">Log uit</a>";
+	}else{
+		echo "<a href=\"login.php?from=index.php\">Log in</a>";
+	}?></li>
+  <li><a href="adduser.php?from=<?php echo $_SERVER["PHP_SELF"];?>">Register</a></li>
 </ul>
 </div>
 <div class="hidden">
@@ -29,6 +43,7 @@
 <label for="Password">Password</label>
 <input type="password" id="Password" name="Password" value="" maxlength="20" />
 </p>
+<input type="hidden" name="from" value="<?php echo $from;?>"/>
 <p>
 <input type="submit" value="Login" />
 </p>

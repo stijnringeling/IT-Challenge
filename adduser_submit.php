@@ -5,6 +5,7 @@ if(!empty($_POST)){
 	$password = $_POST["Password"];
 	$hash = password_hash($password, PASSWORD_DEFAULT);
 	$email = $_POST["Email"];
+	$from = $_POST["from"];
 	$query = "";
 	if(isset($_POST["Username"], $_POST["Password"], $_POST["Email"])){
 		if(strlen($username) <= 20 && strlen($username) >= 4 && strlen($password) <= 20 && strlen($password) >= 4){
@@ -27,7 +28,9 @@ if(!empty($_POST)){
 					else{
 						$bedankt .="?id=". mysql_insert_id($db);
 						mysql_close($db);
-						header("location:$bedankt");
+						if($from != ""){
+							header("Refresh:0; url=$from");
+						}
 						}
 					}else{
 						echo "Your password must be alpha numeric";
