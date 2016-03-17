@@ -15,15 +15,18 @@
 		function getData($querys = Array()){
 			foreach($querys as $query){
 				$row = $this->query($query, $this->db);
-				foreach($row as $key => $value){
-					$this->$key = $value;
+				if($row != null){
+					foreach($row as $key => $value){
+						$this->$key = $value;
+					}
 				}
 			}
 		}
 		function query($query, $db){
-			$result = mysql_query($query, $db);
-			while($row = mysql_fetch_assoc($result)){
-				return $row;
+			if(!$result = mysql_query($query, $db)){return null;}else{
+				while($row = mysql_fetch_assoc($result)){
+					return $row;
+				}
 			}
 		}
 	}
