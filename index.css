@@ -36,14 +36,14 @@ body{
 	margin-right: auto ;
 	margin-top:0px;
 	margin-bottom:0px;
-
+	
 }
 #input{
 	height:6%;
 	width:83.64%;
 	margin-left: auto ;
 	margin-right: auto ;
-	margin-top:50%;
+	
 	float:left;
 	text-alignment:center;
 	font-family:Tahoma;
@@ -64,7 +64,7 @@ body{
   	border:none;
  	height:6%;
   	width:8%;
-	margin-top:50%;
+	
 	background-color:#0fcabf;
 	background-image: url("knop.png");
 	
@@ -79,7 +79,7 @@ body{
 	float:left;
  	height:5.89%;
   	width:8%;
-	margin-top:50%;
+	
 	background-color:#0fcabf;
 	color: white;
 	font-family:Tahoma;
@@ -148,5 +148,31 @@ li a:hover {
 width:100%;
 }
 
+.radio_item{
+display: none !important;
+
+}
+
+.label_item {
+opacity: 0.5;
+float:left;
+
+position: static;
 
 
+
+}
+
+.radio_item:checked + label {
+opacity: 1;
+
+
+}
+#radio{
+margin-top:42%;
+width:100%;
+float:left;
+margin-left:8%;
+}
+
+.fade{display:none;}

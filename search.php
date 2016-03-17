@@ -6,8 +6,8 @@
 	$functies = Array();
 ?>
 <html>
-	<head>
-	<?php
+<head>
+<?php
 		$search = $_GET["q"];
 		$type = $_GET["type"];
 		$results= Array();
@@ -23,8 +23,25 @@
 			}
 		}
 	?>
-	</head>
-	<body>
+<title>search</title>
+
+
+<link rel="stylesheet" type="text/css" href="search.css">
+</head>
+<body>
+<div class="center">
+<div class="header">
+<ul>
+  <li><a href="index.php">Home</a></li>
+  <li><a href="addproject.php">+ Project</a></li>
+  <li><a href="addNAW.php">+ Resource</a></li>
+  <li><a href="login.php">Log in</a></li>
+  <li><a href="adduser.php">Register</a></li>
+</ul>
+</div>
+<div class="hidden">
+<div class="centermid">
+
 	<?php
 		if(sizeof($results) == 0){
 		}else{
@@ -39,16 +56,12 @@
 					while($row = mysql_fetch_assoc($result)){
 						if($row["Public"] == 1){
 							if($type == "R"){
-							echo "<tr><td><a href=\"show.php?ID=" . $row["ID"] . "&type=$type\">" . $row["ID"] . "</a></td><td>" . $functies[$row["Functies"]] . "</td><td>" . $row["Opleiding"] . "</td><td>" . $row["Cursussen"] . "</td><td>" . $row["vaardigheden"] . "</td><td>" . $row["Certificaten_naam"] . "</td><td>" . $row["Skills"] . "</td><td>"  . $row["Competenties"] . "</td><td>" . $row["Beschikbaarheid_van"] . "</td><td>" . $row["Beschikbaarheid_tot"] . "</td><td>" . $row["Niet_Beschikbaarheid_van"] . "</td><td>" . $row["Niet_Beschikbaarheid_tot"] . "</td><td>" . $row["Tarief_u"] . "</td></tr>";
+							echo "<tr><td><a href=\"show.php?ID=" . $row["ID"] . "&type=$type\">" . $row["ID"] . "</a></td><td>" . $functies[$row["Functies"]] . "</td><td>" . $row["Opleiding"] . "</td><td>" . $row["Cursussen"] . "</td><td>" . $row["vaardigheden"] . "</td><td>" . $row["Certificaten_naam"] . "</td><td>" . $row["Skills"] . "</td><td>"  . $row["Competenties"] . "</td><td>" . $row["Beschikbaarheid_van"] . "</td><td>" . $row["Beschikbaarheid_tot"] . "</td><td>" . $row["Niet_Beschikbaarheid_van"] . "</td><td>" . $row["Niet_Beschikbaarheid_tot"] . "</td><td>" . $row["Tarief_p/u"] . "</td></tr>";
 							}else{
 								$tr = "<tr><td><a href=\"show.php?ID=" . $row["ID"] . "&type=$type\">" . $row["ID"] . "</a></td><td>";
-								for($i= 1; $i <= 10; $i++){																																																																					
+								for($i= 1; $i <= 10; $i++){
 									if($functies[$row["Functie$i"]] != ""){
-										if($i == 1){
-											$tr .= $functies[$row["Functie$i"]];
-										}else{
-											$tr .= ", " . $functies[$row["Functie$i"]];
-										}							
+										$tr .= $functies[$row["Functie$i"]];
 									}
 								}
 								$tr .= "</td>";
@@ -65,5 +78,13 @@
 			echo "</table>";
 		}
 	?>
-	</body>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.hidden').slideDown(500);
+});
+</script>
+</body>
 </html>

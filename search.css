@@ -28,14 +28,14 @@ body{
 	padding-bottom:"auto";			/* om de knoppenbalk te verplaatsen */
 }
 .centermid {
-	top:85%;
-	
-	width:40%;
-	
-   	margin-left: auto ;
-	margin-right: auto ;
-	margin-top:0px;
-	margin-bottom:0px;
+	width:80%;
+	height:90%;
+	background-color:rgba(255,255,255,0.9);
+	overflow-y:hidden;
+	margin-left:10%;
+	text-align:center;
+	font-family:Tahoma;
+	font-size:20px;
 
 }
 #input{
@@ -147,4 +147,8 @@ background-color:rgba(255,255,255,0.9);
 overflow-y:hidden;
 margin-left:10%;
 
+}
+
+.hidden{
+ display:none;   
 }
