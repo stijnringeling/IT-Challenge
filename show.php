@@ -2,7 +2,7 @@
 	session_start();
 	include_once("db_connect.inc.php");
 	include_once("User.php");
-	if(isset($_SESSION["logged_in"], $_SESSION["sessionID"])){
+	if(isset($_SESSION["logged_in"], $_SESSION["sessionID"]) && $_SESSION["logged_in"]){
 		$user = new User($_SESSION["sessionID"], $db);
 	}
 	$functies = Array();
