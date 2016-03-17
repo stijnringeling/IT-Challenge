@@ -78,7 +78,7 @@ $bstaat = $_POST["Bstaat"];
 $rijb = $_POST["Rijbewijs"];
 $auto = $_POST["Auto"];
 
-$query2 = "INSERT INTO `itchallenge`.`naw_resources` (`id`, `Achternaam`, `Voorvoegsel`, `Voorletters`, `Voornaam`, `Roepnaam`, `Woonadres`, `Postcode`, `Plaats`, `Land`, `Thuis`, `Werk`, `Mobiel`, `E-mail1`, `E-mail2`, `Geboortedatum`, `Geboorteplaats`, `Nationaliteit`, `Bstaat`, `Rijbewijs`, `Auto`) 
+$query2 = "INSERT INTO `itchallenge` . `naw_resources` (`id`, `Achternaam`, `Voorvoegsel`, `Voorletters`, `Voornaam`, `Roepnaam`, `Woonadres`, `Postcode`, `Plaats`, `Land`, `Thuis`, `Werk`, `Mobiel`, `E-mail1`, `E-mail2`, `Geboortedatum`, `Geboorteplaats`, `Nationaliteit`, `Bstaat`, `Rijbewijs`, `Auto`) 
 VALUES ('$id', '$achternaam', '$voorvoegsel', '$voorletters', '$voornaam', '$roepnaam', '$woonadres', '$postcode', '$plaats', '$land', '$thuis', '$werk', '$mobiel', '$email1', '$email2', '$gdatum', '$gplaats', '$natio', '$bstaat', '$rijb', '$auto')";
 
 if(!mysql_query($query2)){
