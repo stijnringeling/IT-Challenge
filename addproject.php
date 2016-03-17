@@ -52,7 +52,7 @@ else{
 	
 <html>
 <head>
-<title>Account registration</title>
+<title>Add Project</title>
 <link rel="stylesheet" type="text/css" href="search.css">
 </head>
 <body>
@@ -70,7 +70,7 @@ else{
 <div class="centermid">
 </head>
 <body>
-<h2>Add user</h2>
+<h2>Add project</h2>
 <form method="post" id="addproject" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"] ?>"><table>
 <tr><td>Projectnaam: </td><td><input type="text" name="P_naam"></td></tr>
 <tr><td>Omschrijving: </td><td><textarea name="Omschrijving" form="addproject"  ROWS=3 COLS=22></textarea></td></tr>
