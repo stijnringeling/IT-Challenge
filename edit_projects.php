@@ -7,7 +7,7 @@ if(isset($_SESSION["logged_in"], $_SESSION["sessionID"])){
 	}
 	$functies = Array();
 
-$query="SELECT * FROM projecten WHERE ID=1";
+$query="SELECT * FROM projecten WHERE ID='" . $user->ID . "'";
 $result= mysql_query($query);
 $rows=mysql_fetch_array($result);
 
