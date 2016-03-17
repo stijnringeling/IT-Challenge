@@ -10,7 +10,7 @@ if(!empty($_POST)){
 //<tr><td>Bestand toevoegen: </td><td><input type="file" name="File" size="25" /></td></tr>
 
 
-$query = "INSERT INTO projecten (Naam, Omschrijving, Plaats, Startdatum, Einddatum, Werkomschrijving, Vaardigheden, Skills, Fulltime, Uren, Public) ";
+$query = "INSERT INTO projecten (Naam, Omschrijving, Plaats, Startdatum, Einddatum, Werkomschrijving, Vaardigheden, Skills, Fulltime, Uren, `Public`) ";
 $query .= "VALUES ('";
 $query .= $_POST["P_naam"]."','";
 $query .= $_POST["Omschrijving"]."','";
@@ -58,7 +58,7 @@ else{
 	$bstaat = $_POST["Bstaat"];
 	$rijb = $_POST["Rijbewijs"];
 	$auto = $_POST["Auto"];
-	$query = "INSERT INTO `itchallenge`.`naw_projecten` (`ID`, `Achternaam`, `Voorvoegsel`, `Voorletters`, `Voornaam`, `Roepnaam`, `Woonadres`, `Postcode`, `Plaats`, `Land`, `Thuis`, `Werk`, `Mobiel`, `E-mail1`, `E-mail2`, `Geboortedatum`, `Geboorteplaats`, `Nationaliteit`, `Bstaat`, `Rijbewijs`, `Auto`) 
+	$query = "INSERT INTO `ITchallenge` . `naw_projecten` (`ID`, `Achternaam`, `Voorvoegsel`, `Voorletters`, `Voornaam`, `Roepnaam`, `Woonadres`, `Postcode`, `Plaats`, `Land`, `Thuis`, `Werk`, `Mobiel`, `E-mail1`, `E-mail2`, `Geboortedatum`, `Geboorteplaats`, `Nationaliteit`, `Bstaat`, `Rijbewijs`, `Auto`) 
 VALUES ('$id', '$achternaam', '$voorvoegsel', '$voorletters', '$voornaam', '$roepnaam', '$woonadres', '$postcode', '$plaats', '$land', '$thuis', '$werk', '$mobiel', '$email1', '$email2', '$gdatum', '$gplaats', '$natio', '$bstaat', '$rijb', '$auto')";
 	if(!mysql_query($query, $db)){
 		echo "error in query $query";
