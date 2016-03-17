@@ -2,25 +2,19 @@ body{
 	background-image: url("image1.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	
 	margin:0px;
-	
 }
 .center {
-	
 	height:100%;
 	width:100%;
-	
    	margin-left: auto ;
 	margin-right: auto ;
 	margin-top:0px;
 	margin-bottom:0px;
 }
-
 .header {
 	height:10%;
 	width:100%;
-	
    	margin-left: auto ;
 	margin-right: auto ;
 	background-color:#0fcabf;
@@ -29,9 +23,7 @@ body{
 }
 .centermid {
 	top:85%;
-	
 	width:40%;
-	
    	margin-left: auto ;
 	margin-right: auto ;
 	margin-top:0px;
@@ -43,91 +35,61 @@ body{
 	width:83.64%;
 	margin-left: auto ;
 	margin-right: auto ;
-	margin-top:50%;
 	float:left;
 	text-alignment:center;
 	font-family:Tahoma;
-	font-size:20px;
-	border:1px solid black;
-	
+	font-size:20px;	
 }
-
 #input:hover {
-    	background-color:#ACFCFF;
-}
-
-
-
-	
+    background-color:#ACFCFF;
+}	
 #button{
  	background-size: cover;
   	border:none;
  	height:6%;
   	width:8%;
-	margin-top:50%;
 	background-color:#0fcabf;
 	background-image: url("knop.png");
-	border:1px solid black;
 	vertical-align: middle;
 }
-
-
-	
 #nummer{
 	
 	float:left;
  	height:5.89%;
   	width:8%;
-	margin-top:50%;
 	background-color:#0fcabf;
 	color: white;
 	font-family:Tahoma;
 	font-size:30px;
 	font-weight: bold;
-	text-align:center;
-	border:1px solid black;	
+	text-align:center;	
 }
 .count
 {
-margin-top:12%;
+	margin-top:12%;
 }
-	
-	
-	
-	
-	
-	
-
-
 ul {
-    	list-style-type: none;
-    	position: static;
-    	overflow: hidden;
-    	
-	
+    list-style-type: none;
+    position: static;
+    overflow: hidden;
 }
-
 li {
-    	float: left;
+    float: left;
 }
-
 li a {
 	font-family:Tahoma;
 	font-size:20px;
 	font-weight: bold;
-    	display: block;
-    	color: white;
-    	text-align: center;
-    	padding:20px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding:20px;
 	margin-top:15px;
-    	text-decoration: none;
+    text-decoration: none;
 }
-
-
 li a:hover {
-    	color: #111;
+    color: #111;
 }
-
 .results{
 	border: 1px solid black;
 	font-size:20px;
@@ -137,16 +99,29 @@ li a:hover {
 	background-color:#ffffff;
 	float:left;
 	padding-left:0;
-	margin-left:8%;
-		
+	margin-left:8%;	
 	}
 .results li:hover {
-    	background-color: #ACFCFF;
+    background-color: #ACFCFF;
 	width:100%;
 }
-
 .results li{
 width:100%;
 }
-
-
+.radio_item{
+display: none !important;
+}
+.label_item {
+opacity: 0.5;
+float:left;
+position: static;
+}
+.radio_item:checked + label {
+opacity: 1;
+}
+#radio{
+margin-top:42%;
+width:100%;
+float:left;
+margin-left:8%;
+}
