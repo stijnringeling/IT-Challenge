@@ -123,7 +123,7 @@ else{
 <tr><td>Opleiding tot</td><td><input type="text" name="Opleiding_tot"></td></tr>
 <tr><td>Opleiding</td><td><input type="text" name="Opleiding"></td></tr>
 <tr><td>Opleiding vakken</td><td><input type="text" name="Opleiding_vakken"></td></tr>
-<tr><td>Opleiding diploma</td><td><input type="radio" name="Opleiding_diploma" value="1">Ja</td><td><td><input type="radio" name="Opleiding_diploma" value="0">Nee</tr>
+<tr><td>Opleiding diploma</td><td><input type="radio" name="Opleiding_diploma" value="1">Ja</td><td><input type="radio" name="Opleiding_diploma" value="0">Nee</tr>
 <tr><td>Opleiding jaar</td><td><input type="text" name="Opleiding_jaar"/></td></tr>
 <tr><td>Cursussen van</td><td><input type="text" name="Cursussen_van"></td></tr>
 <tr><td>Cursussen tot</td><td><input type="text" name="Cursussen_tot"></td></tr>
