@@ -70,7 +70,11 @@
 								$tr = "<tr><td><a href=\"show.php?ID=" . $row["ID"] . "&type=$type\">" . $row["ID"] . "</a></td><td>";
 								for($i= 1; $i <= 10; $i++){
 									if($functies[$row["Functie$i"]] != ""){
-										$tr .= $functies[$row["Functie$i"]];
+										if($i == 1){
+											$tr .= $functies[$row["Functie$i"]];
+										}else{
+											$tr .= ", " . $functies[$row["Functie$i"]];
+										}
 									}
 								}
 								$tr .= "</td>";
