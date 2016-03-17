@@ -42,19 +42,24 @@
 				}
 			}
 		?>	
-<link rel="stylesheet" type="text/css" href="index.css">		
+<link rel="stylesheet" type="text/css" href="search.css">		
 	</head>
 	<body>
 	<div class="header">
 <ul>
   <li><a href="index.php">Home</a></li>
-  <li><a href="news.asp">+ Project</a></li>
-  <li><a href="contact.asp">+ Resource</a></li>
-  <li><a href="about.asp">Log in</a></li>
-  <li><a href="about.asp">Register</a></li>
+  <li><a href="addproject.php">+ Project</a></li>
+  <li><a href="addNAW.php">+ Resource</a></li>
+  <li><?php
+	if(isset($user->ID)){
+		echo "<a href=\"logout.php?from=". $_SERVER["PHP_SELF"] . "\">Log uit</a>";
+	}else{
+		echo "<a href=\"login.php?from=". $_SERVER["PHP_SELF"] . "\">Log in</a>";
+	}?></li>
+  <li><a href="adduser.php?from=<?php echo $_SERVER["PHP_SELF"];?>">Register</a></li>
 </ul>
-</div>
-		</div>
+	</div>
+		<div class="centermid">
 		<?php
 			echo $errors;
 			if($result != ""){
@@ -102,5 +107,6 @@
 				}
 			}
 		?>
+		</div>
 	</body>
 </html>

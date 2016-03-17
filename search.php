@@ -31,7 +31,6 @@
 <link rel="stylesheet" type="text/css" href="search.css">
 </head>
 <body>
-<div class="center">
 <div class="header">
 <ul>
   <li><a href="index.php">Home</a></li>
