@@ -108,7 +108,12 @@ else{
   <li><a href="index.php">Home</a></li>
   <li><a href="addproject.php">+ Project</a></li>
   <li><a href="addNAW.php">+ Resource</a></li>
-  <li><a href="login.php">Log in</a></li>
+  <li><?php
+	if(isset($user->ID)){
+		echo "<a href=\"logout.php?from=". $_SERVER["PHP_SELF"] . "\">Log uit</a>";
+	}else{
+		echo "<a href=\"login.php?from=". $_SERVER["PHP_SELF"] . "\">Log in</a>";
+	}?></li>
   <li><a href="adduser.php">Register</a></li>
 </ul>
 </div>
