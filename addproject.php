@@ -1,7 +1,11 @@
 <?php
+session_start();
+include_once("db_connect.inc.php") ;
+include_once("User.php");
+if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true){
+	$user = new User($_SESSION["sessionID"], $db);
+}
 if(!empty($_POST)){
-	include_once("db_connect.inc.php");
-	$query = "";
 
 //$imagename=$_FILES["File"]["name"]; 
  
