@@ -3,7 +3,7 @@ include_once("db_connect.inc.php") ;
 if(!empty($_POST)){
 
 
-//$query = "INSERT INTO 'itchallenge'.'naw' ('ID','Achternaam', 'Voorvoegsel', 'Voorletters', 'Voornaam', 'Roepnaam', 'Woonadres', 'Postcode', 'Plaats', 'Land', 'Thuis', 'Werk', 'Mobiel', 'E-mail1', 'E-mail2', 'Geboortedatum', 'Geboorteplaats', 'Nationaliteit', 'Bstaat', 'Rijbewijs', 'Auto')";
+//$query = "INSERT INTO 'itchallenge'.'NAW' ('ID','Achternaam', 'Voorvoegsel', 'Voorletters', 'Voornaam', 'Roepnaam', 'Woonadres', 'Postcode', 'Plaats', 'Land', 'Thuis', 'Werk', 'Mobiel', 'E-mail1', 'E-mail2', 'Geboortedatum', 'Geboorteplaats', 'Nationaliteit', 'Bstaat', 'Rijbewijs', 'Auto')";
 //$query .= "VALUES ('5','";
 $id = mysql_insert_id();
 $achternaam = $_POST["Achternaam"]; 
@@ -27,8 +27,8 @@ $bstaat = $_POST["Bstaat"];
 $rijb = $_POST["Rijbewijs"];
 $auto = $_POST["Auto"];
 
-$query = "INSERT INTO `itchallenge`.`naw` (`ID`, `Achternaam`, `Voorvoegsel`, `Voorletters`, `Voornaam`, `Roepnaam`, `Woonadres`, `Postcode`, `Plaats`, `Land`, `Thuis`, `Werk`, `Mobiel`, `E-mail1`, `E-mail2`, `Geboortedatum`, `Geboorteplaats`, `Nationaliteit`, `Bstaat`, `Rijbewijs`, `Auto`) 
-VALUES ('$id', '$achternaam', '$voorvoegsel', '$voorletters', '$voornaam', '$roepnaam', '$woonadres', '$postcode', '$plaats', '$land', '$thuis', '$werk', '$mobiel', '$email1', '$email2', '$gdatum', '$gplaats', '$natio', '$bstaat', '$rijb', '$auto')";
+$query = "INSERT INTO `itchallenge`.`NAW` (`Achternaam`, `Voorvoegsel`, `Voorletters`, `Voornaam`, `Roepnaam`, `Woonadres`, `Postcode`, `Plaats`, `Land`, `Thuis`, `Werk`, `Mobiel`, `E-mail1`, `E-mail2`, `Geboortedatum`, `Geboorteplaats`, `Nationaliteit`, `Bstaat`, `Rijbewijs`, `Auto`) 
+VALUES ('$achternaam', '$voorvoegsel', '$voorletters', '$voornaam', '$roepnaam', '$woonadres', '$postcode', '$plaats', '$land', '$thuis', '$werk', '$mobiel', '$email1', '$email2', '$gdatum', '$gplaats', '$natio', '$bstaat', '$rijb', '$auto')";
 
 if(!mysql_query($query)){
 	echo "Er is een fout opgetreden met nummer ". mysql_errno().":" . mysql_error();
