@@ -68,3 +68,6 @@ table{
 	overflow-y:auto;
 	margin-left:10%;
 }
+.hidden{
+ display:none;   
+}
