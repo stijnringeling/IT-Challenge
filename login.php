@@ -27,7 +27,7 @@
 </p>
 <p>
 <label for="Password">Password</label>
-<input type="text" id="Password" name="Password" value="" maxlength="20" />
+<input type="password" id="Password" name="Password" value="" maxlength="20" />
 </p>
 <p>
 <input type="submit" value="Login" />
