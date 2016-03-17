@@ -4,11 +4,14 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script type="text/javascript">
 			lastInput = "";
+			type = "R";
+			lastType = type;
 			function getHints(text){
-				if(lastInput != text){
+				type = $('input[name=type]:checked').val();
+				if(lastInput != text || lastType != type){
 					$.ajax({
 						url: "getHints.php",
-						data: {"search": text},
+						data: {"search": text, "type": type},
 						dataType: "json",
 						success: function(data, status, j){
 							var resultString = "";
@@ -25,6 +28,7 @@
 							$(".results").html(resultString);
 							$(".count").html(data[1]);
 							lastInput = text;
+							lastType = type;
 						}
 					});
 				}
