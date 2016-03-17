@@ -5,17 +5,22 @@
 		<script type="text/javascript">
 		
 			lastInput = "";
+			type = "R";
+			lastType = type;
 			function getHints(text){
-				if(lastInput != text){
+				type = $('input[name=type]:checked').val();
+				if(lastInput != text || lastType != type){
 					$.ajax({
 						url: "getHints.php",
-						data: {"search": text},
+						data: {"search": text, "type": type},
 						dataType: "json",
 						success: function(data, status, j){
 							var resultString = "";
 							if(data[0].length != 0){
+								counter = 0;
 								$.each(data[0], function(key, value){
-									resultString += "<li>" + value + "</li><br/>";
+									resultString += "<li id=\"hint" + counter + "\" onclick=\"hintClick('hint" + counter + "')\">" + value + "</li><br/>";
+									counter++;
 									/*if(resultString == ""){
 										resultString = value;
 									}else{
@@ -26,6 +31,7 @@
 							$(".results").html(resultString);
 							$(".count").html(data[1]);
 							lastInput = text;
+							lastType = type;
 						}
 					});
 				}
@@ -33,6 +39,12 @@
 			
 			function updateType(){
 				getHints(lastInput);
+			}
+			
+			function hintClick(id){
+				hint = $('#'+ id).html();
+				$('#input').val(hint);
+				getHints(hint);
 			}
 			
 		</script>
