@@ -23,7 +23,7 @@
 						}
 					}
 					$querys[] = $query;
-					//echo $query;
+					echo $query;
 				}
 			}
 			
