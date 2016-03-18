@@ -137,7 +137,7 @@ else{
 <tr><td>Omschrijving van de werkzaamheden: </td><td><textarea name="W_omschrijving" form="addproject"  ROWS=3 COLS=22></textarea></td></tr>
 <tr><td>Vaardigheden: </td><td><input type="text" name="Vaardigheden"></td></tr>
 <tr><td>Skills: </td><td><input type="text" name="Skills"></td></tr>
-<tr><td>Fulltime: </td><td><input type="radio" name="Fulltime"value="1" checked></td><td><input type="radio" name="Fulltime" value="0">Nee</td></tr>
+<tr><td>Fulltime: </td><td><input type="radio" name="Fulltime"value="1" checked>Ja</td><td><input type="radio" name="Fulltime" value="0">Nee</td></tr>
 <tr><td>Aantal uren: </td><td><input type="text" name="Uren">
 <tr><td>Public: </td><td><input type="radio" name="Public" value="1" checked> Ja</td><td><input type="radio" name="Public" value="0"> Nee</td></tr>
 <tr><td>Achternaam: </td><td><input type="text" name="Achternaam"></td></tr>
