@@ -52,9 +52,9 @@
   <li><a href="addNAW.php">+ Resource</a></li>
   <li><?php
 	if(isset($user->ID)){
-		echo "<a href=\"logout.php?from=". $_SERVER["PHP_SELF"] . "\">Log uit</a>";
+		echo "<a href=\"logout.php?from=". $_SERVER["PHP_SELF"] . "?ID=" . $_GET["ID"] . "%26type=" . $_GET[" type"] ."\">Log uit</a>";
 	}else{
-		echo "<a href=\"login.php?from=". $_SERVER["PHP_SELF"] . "\">Log in</a>";
+		echo "<a href=\"login.php?from=". $_SERVER["PHP_SELF"] . "?ID=" . $_GET["ID"] . "%26type=" . $_GET[" type"] ."\">Log in</a>";
 	}?></li>
   <li><a href="adduser.php?from=<?php echo $_SERVER["PHP_SELF"];?>">Register</a></li>
 </ul>
